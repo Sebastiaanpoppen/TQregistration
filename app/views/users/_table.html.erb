@@ -1,0 +1,34 @@
+        <div class="table-responsive col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th><th>Name</th><th>Checkin</th>
+                        <th>Company</th><th>Email</th><th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <% @users.each_with_index do |user, i| %>
+                    <tr>
+                        <td><p><%= i %></p></td>
+                        <td><p><%= user.full_name %><br/>
+                            (Guest)</p></p></td>
+                        <td><p><span class="label label-success"><span class="glyphicon glyphicon-ok"></span></span></p></td>
+                        <td><p><%= user_company user %></p></td>
+                        <td><p><%= user_email user %></p></td>
+                        <td class="col-md-2"><p>
+                            <a class="btn btn-default" href="#"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                        </p></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+            </table>
+        </div>
+        <div class="pull-right">
+            <ul class="pagination">
+                <li><a href="#">«</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">»</a></li>
+            </ul>
+        </div>
