@@ -16,9 +16,7 @@ end
 def create
 end
 
-def search
-
-end
+# in the controller:
 
 def update
 end
