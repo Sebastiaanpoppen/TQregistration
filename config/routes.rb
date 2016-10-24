@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :users do
     get 'pages/checkedin'
+    get 'show'
   end
   
   resources :admins, only: [:show, :index] do

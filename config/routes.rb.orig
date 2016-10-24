@@ -3,7 +3,13 @@ Rails.application.routes.draw do
 
   get 'pages/home'
 
+  root to: 'pages#home'
+  resources :users do
+    get 'pages/checkedin'
+    get 'show'
+  end
 <<<<<<< HEAD
+  
   resources :admins, only: [:show, :index] do
     resources :users, only: [:index]
   end
@@ -12,11 +18,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :edit, :show]
 =======
-  root to: 'pages#home'
-  resources :users do
-    get 'pages/checkedin'
-  end
-  resources :users
+
 >>>>>>> master
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
