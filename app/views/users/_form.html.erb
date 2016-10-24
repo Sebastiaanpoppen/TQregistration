@@ -23,8 +23,12 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Check In", class: "btn btn-success" %>
+      <%= link_to "Oh wait.. I've done this before", root_path, class: "btn btn-default" %>
+      <%= f.submit (@user.new_record? ? "Create" : "Update"), class: "btn btn-default" %>
+    
     </div>
+
   <% end %>
+
 
 </div>
