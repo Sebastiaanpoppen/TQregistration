@@ -9,6 +9,13 @@
   </head>
 
   <body>
-    <div class="container"><%= yield %></div>
+    <div class="container">
+      <div class="row">
+        <div class="wrapper active">
+          <%= render 'shared/notice' %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
