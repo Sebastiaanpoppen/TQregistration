@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users do
     get 'pages/checkedin'
   end
+  
   resources :admins, only: [:show, :index] do
     resources :users, only: [:index]
   end
