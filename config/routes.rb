@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'pages/home'
 
   root to: 'pages#home'
+  get 'pages/search_users'
   resources :users do
     get 'pages/checkedin'
     get 'show'

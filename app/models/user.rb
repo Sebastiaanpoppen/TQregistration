@@ -11,4 +11,7 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  def self.search(search)
+    where('first_name ILIKE :search OR last_name ILIKE :search', search: "%#{search}%")
+  end
 end
