@@ -1,3 +1,66 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// SEARCH USER PAGE
+
+// SEARCH BAR
+
+#custom-search-input {
+    display: block;
+    padding: 0;
+    border-radius: 8px;
+}
+
+#custom-search-input .search-query {
+    padding: 25px;
+    padding-left: 50px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 18px;
+    background: rgb(255, 255, 255);
+    z-index: 0;
+}
+
+#custom-search-input button {
+    border: 0;
+    background: none;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: rgb(117, 117, 117);
+}
+.input-group-btn{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+.search-query:focus + button{
+    z-index: 1000;
+}
+.search-results{
+  margin-top: 2px;
+  display: flex;
+  justify-content: flex-start;
+}
+.search-results .btn.btn-default{
+  width: 20%;
+  border-radius: 3px;
+  margin: 0;
+  margin-right: 5px;
+  display: inline-block;
+}
+// END SEARCH BAR
+
+// END SEARCH USERS PAGE

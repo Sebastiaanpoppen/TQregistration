@@ -1,0 +1,47 @@
+// LOGIN and SIGN UP
+#loginbox {
+    position: relative;
+    display: block;
+    margin-top: 20%;
+}
+
+
+#form > div {
+    margin-bottom: 25px;
+}
+
+#form > div:last-child {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#loginbox .panel {
+    background-color: transparent;
+}
+
+#loginbox .panel-body {
+    padding-top: 30px;
+    background-color: rgba(2555,255,255,.3);
+}
+
+#loginbox .input-group{
+ margin: 10px auto;
+}
+
+#loginbox .btn{
+  width: 45%;
+}
+#loginbox .btn.btn-danger{
+  width: auto;
+  color: rgb(224, 224, 224);
+}
+#loginbox #error_explanation h2{
+  display: none;
+}
+#loginbox #error_explanation ul{
+  list-style: none;
+  margin: 0;
+  font-size: 14px;
+}
+
+//  END
