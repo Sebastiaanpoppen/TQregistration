@@ -23,8 +23,9 @@
     </div>
 
     <div class="actions">
-      <%= f.submit (@user.new_record? ? "Create" : "Update"), class: "btn btn-success" %>
-      <%= link_to "Back", root_path, class: "btn btn-default" %>
+      <%= link_to "Oh wait.. I've done this before", root_path, class: "btn btn-default" %>
+      <%= f.submit (@user.new_record? ? "Create" : "Update"), class: "btn btn-default" %>
+    
     </div>
 
   <% end %>
