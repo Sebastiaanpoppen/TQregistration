@@ -1,10 +1,5 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "custom";
-
-
-//= require jquery
-//= require bootstrap-sprockets
-//= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+@import "devise";
+@import "pages";

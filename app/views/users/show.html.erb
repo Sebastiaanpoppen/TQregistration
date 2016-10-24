@@ -1,10 +1,12 @@
-<h1>User information</h1>
+<div class="content">
+  <h1>User information</h1>
 
-<p> <%= "#{@user.full_name}" %> </p>
-<p> <%= "#{@user.company}" %> </p>
-<p> <%= "#{@user.email}" %> </p>
+  <p> <%= "#{@user.full_name}" %> </p>
+  <p> <%= "#{@user.company}" %> </p>
+  <p> <%= "#{@user.email}" %> </p>
 
-<div class="actions">
-  <%= link_to "Oops it's not me", root_path, class: "btn btn-default" %>
-  <%= link_to "Check in", user_pages_checkedin_path(@user), class: "btn btn-default" %>
+  <div class="actions">
+    <%= link_to "Oops it's not me", root_path, class: "btn btn-default" %>
+    <%= link_to "Check in", user_pages_checkedin_path(@user), class: "btn btn-default" %>
+  </div>
 </div>
