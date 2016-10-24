@@ -1,0 +1,26 @@
+
+<div class="container">
+  <div class="row">
+    <h2>Search for excisting user</h2>
+    <div id="custom-search-input">
+      <div class="input-group col-md-12">
+        <%= form_tag(users_path, :method => "get", name: "search-form") do %>
+            <input type="text" name="search" id="search" class="  search-query form-control" placeholder="Search" />
+        <% end %>
+        <span class="input-group-btn">
+                                    <button class="btn btn-danger" type="button">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="btn btn-default">
+  <%= link_to "Oops, it's my first time!", new_user_path  %>
+</div>
