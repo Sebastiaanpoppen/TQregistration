@@ -16,7 +16,7 @@ def create
   @user = User.create( user_params )
 
   if @user.save
-     redirect_to pages_checkedin_path(@user), notice: "User successfully created"
+     redirect_to user_pages_checkedin_path(@user), notice: "User successfully created"
   else
      render :new
   end

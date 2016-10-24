@@ -2,8 +2,8 @@ class PagesController < ApplicationController
   def home
   end
 
-  def full_name
-    "#{first_name} #{last_name}"
+  def checkedin
+    @user = User.find(params[:user_id])
   end
 
 end
