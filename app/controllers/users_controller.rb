@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
+before_action :set_user, only: [:index]
 
 def index
-
+  if @user
+    $users = User.all
+  else
+    redirect_to  new_admin_session_path
+  end
 end
 
 def new
@@ -35,5 +40,10 @@ private
     params.require(:user).permit(:first_name, :last_name, :company, :email, :newsletter)
   end
 
+private
+
+def set_user
+  !current_admin.nil? ? @user = current_admin : @user = false
+end
 
 end

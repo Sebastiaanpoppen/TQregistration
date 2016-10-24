@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :admins
   get 'pages/home'
+<<<<<<< HEAD
+=======
+  root to: 'pages#home'
+>>>>>>> master
 
   root to: 'pages#home'
   resources :users do

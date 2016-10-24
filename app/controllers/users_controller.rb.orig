@@ -1,18 +1,36 @@
 class UsersController < ApplicationController
+before_action :set_user, only: [:index]
 
-<<<<<<< HEAD
-  def new
-    @user = User.new
-  end
-=======
 def index
+<<<<<<< HEAD
+
+=======
+  if @user
+    $users = User.all
+  else
+    redirect_to  new_admin_session_path
+  end
+>>>>>>> master
 end
 
 def new
+  @user = User.new
+end
+
+def show
+  @user = User.find(params[:id])
 end
 
 def create
+  @user = User.create( user_params )
+
+  if @user.save
+     redirect_to user_pages_checkedin_path(@user), notice: "User successfully created"
+  else
+     render :new
+  end
 end
+
 
 def update
 end
@@ -20,6 +38,16 @@ end
 def delete
 end
 
+private
 
->>>>>>> master
+def set_user
+  !current_admin.nil? ? @user = current_admin : @user = false
+end
+
+private
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :company, :email, :newsletter)
+  end
+
+
 end
