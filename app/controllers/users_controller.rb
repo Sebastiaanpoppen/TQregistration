@@ -3,7 +3,7 @@ before_action :set_user, only: [:index]
 
 def index
   if @user
-    $users = User.all
+    @users = User.all.order_by "first_name"
   else
     redirect_to  new_admin_session_path
   end
