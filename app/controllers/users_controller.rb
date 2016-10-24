@@ -3,26 +3,42 @@ before_action :set_user, only: [:index]
 
 def index
   if @user
-    $users = User.all
+    @users = User.all.order_by "first_name"
   else
     redirect_to  new_admin_session_path
   end
 end
 
 def new
-    @user = User.new
+  @user = User.new
+end
+
+def show
+  @user = User.find(params[:id])
 end
 
 def create
+  @user = User.create( user_params )
+
+  if @user.save
+     redirect_to user_pages_checkedin_path(@user)
+  else
+     render :new
+  end
 end
 
-# in the controller:
 
 def update
 end
 
 def delete
 end
+
+
+private
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :company, :email, :newsletter)
+  end
 
 private
 
