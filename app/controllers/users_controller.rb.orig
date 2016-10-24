@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
 
+<<<<<<< HEAD
+  def new
+    @user = User.new
+  end
+=======
 def index
 end
 
 def new
-    @user = User.new
 end
 
 def create
@@ -17,4 +21,5 @@ def delete
 end
 
 
+>>>>>>> master
 end
