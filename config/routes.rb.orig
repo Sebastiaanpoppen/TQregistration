@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   devise_for :admins
   get 'pages/home'
   root to: 'pages#home'
+<<<<<<< HEAD
+  resources :users
   get 'pages/search_users'
+=======
+>>>>>>> master
 
   resources :users
 
