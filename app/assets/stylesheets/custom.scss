@@ -21,10 +21,16 @@ body, html {
   overflow:auto;
 }
 
+.content-form {
+  height: 400px;
+}
+
 .btn {
   background-color: #0000EE;
   border-color: #0000EE;
   border-radius: 20px;
+  color: #DDBB88;
+
 
   a {
     color: #DDBB88;
@@ -36,4 +42,15 @@ body, html {
   background-color: #0000EE;
   border-color: #0000EE;
   text-decoration: none;
+}
+
+/* Form for new users */
+
+.form-name {
+  display: inline-block;
+  width: 100%;
+}
+
+.form-group {
+  width: 100%;
 }
