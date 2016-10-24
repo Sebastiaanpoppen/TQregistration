@@ -25,7 +25,11 @@
     </div>
 
     <div class="actions">
+<<<<<<< HEAD
+      <%= link_to "Oh wait... I've done this before", root_path, class: "btn btn-default btn-special" %>
+=======
       <%= link_to "Oh wait.. I've done this before", root_path, class: "btn btn-default" %>
+>>>>>>> 1737d12b32aedd33003a856440d25a6419548806
       <%= f.submit (@user.new_record? ? "Create" : "Update"), class: "btn btn-default" %>
     </div>
 
