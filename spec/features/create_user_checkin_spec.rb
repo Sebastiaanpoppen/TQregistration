@@ -10,6 +10,6 @@ it "open the it's my first time function" do
   fill_in('Last Name', :with => 'Pancake')
   fill_in('Company', :with => 'Peter Pancakes')
   click_button("Create")
-  # expect(page).to have_text("Welcome")
+  expect(page).to have_text("Welcome")
   end
 end
