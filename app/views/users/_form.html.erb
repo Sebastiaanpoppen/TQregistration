@@ -1,22 +1,22 @@
 <div class="content content-form">
 
-  <%= form_for @user, remote: true do |f| %>
+  <%= form_for @user,  html: { autocomplete: "off" }, remote: true do |f| %>
 
     <div class="form-name">
-      <div class="form-group" autocomplete="off">
+      <div class="form-group">
         <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
       </div>
 
-      <div class="form-group" autocomplete="off">
+      <div class="form-group">
         <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
       </div>
     </div>
 
-    <div class="form-group" autocomplete="off">
+    <div class="form-group">
       <%= f.text_field :company, placeholder: "Company", class: "form-control" %>
     </div>
 
-    <div class="form-group" autocomplete="off">
+    <div class="form-group">
       <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
     </div>
 
