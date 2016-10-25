@@ -1,0 +1,46 @@
+<div class="page-wrapper">
+    <div class="new-booking">
+        <div class="row">
+            <div class="col-md-5 text-center">
+                <a href="#" class="btn btn-danger pull-right" id="abort-booking-creation">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
+                <div class="box">
+                    <h1>New Visit</h1>
+                    <div class="box-content">
+                        <input type="text" id="first_name" name="first_name" class="tag-title" placeholder="First name">
+                        <input type="text" id="last_name" name="last_name" class="tag-title" placeholder="Last name">
+                        <hr/>
+                        <input type="text" id="company" name="company" class="tag-title" placeholder="Company">
+                        <input type="text" id="email" name="email" class="tag-title" placeholder="example@gmail.com">
+                        <br/>
+                        <h2>Select Date</h2>
+                        <hr/>
+                        <div class="date-picker" data-date="2014-02-03">
+                            <div class="date-container">
+                                <h3 class="date">
+                                    <span data-toggle="datepicker" data-method="subtract" data-type="d" class="fa fa-angle-left"></span>
+                                    <span class="text">17th</span>
+                                    <span data-toggle="datepicker" data-method="add" data-type="d" class="fa fa-angle-right"></span>
+                                </h3>
+                                <h2 class="month">
+                                    <span data-toggle="datepicker" data-method="subtract" data-type="M" class="fa fa-angle-left"></span>
+                                    <span class="text">December</span>
+                                    <span data-toggle="datepicker" data-method="add" data-type="M" class="fa fa-angle-right"></span>
+                                </h2>
+                                <h3 class="year">
+                                    <span data-toggle="datepicker" data-method="subtract" data-type="y" class="fa fa-angle-left"></span>
+                                    <span class="text">2014</span>
+                                    <span data-toggle="datepicker" data-method="add" data-type="y" class="fa fa-angle-right"></span>
+                                </h3>
+                            </div>
+                        </div>
+                        <input type="hidden" id="dateinput" name="date"></input>
+                        <hr/>
+                        <a href="#" class="btn btn-default" id="create-new-booking">Create</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
