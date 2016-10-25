@@ -6,7 +6,6 @@ FactoryGirl.define do
     email             { Faker::Internet.email }
     newsletter        true
 
-
     trait :active do
       active true
     end
