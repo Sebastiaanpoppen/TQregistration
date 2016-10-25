@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get 'show'
   end
 
-  resources :admins, only: [:show, :index] do
+  resources :admins, only: [:show, :index ] do
     resources :users, only: [:index]
   end
 

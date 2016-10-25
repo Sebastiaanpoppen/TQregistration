@@ -1,2 +1,7 @@
 <%= render 'navbar' %>
 <%= render 'table' %>
+
+<p>
+  Download:
+  <%= link_to "Excel", admin_users_path(@admin.id, format: "xls") %>
+</p>
