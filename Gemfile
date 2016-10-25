@@ -42,6 +42,8 @@ group :development, :test do
 
   gem 'factory_girl_rails', '4.7.0'     # added for testing
   gem 'faker', '1.6.6'                  # added for testing and seeds
+  gem 'selenium-webdriver', '~> 2.53'
+  gem 'database_cleaner'
 end
 
 group :test do
