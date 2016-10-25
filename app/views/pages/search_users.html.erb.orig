@@ -1,0 +1,54 @@
+<<<<<<< HEAD
+
+<div class="container">
+  <div class="row">
+    <h2>Search for existing user</h2>
+    <div id="custom-search-input">
+      <div class="input-group col-md-12">
+        <%= form_tag pages_search_users_path, :method => 'get' do %>
+            <p>
+              <%= text_field_tag :search, params[:search] %>
+              <%= submit_tag "Search", :search => nil %>
+            </p>
+
+        <% end %>
+
+        <% if !@users.nil? %>
+=======
+<div class="row">
+    <div class="content">
+        <div id="custom-search-input">
+            <form class="input-group col-md-12" action="<%= pages_search_users_path %>">
+                <input type="text" id="search" name="search" class="search-query form-control" placeholder="Name, surname, email address"/>
+                <span class="input-group-btn">
+                    <button class="btn" type="submit">
+                        <span class="search glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </form>
+        </div>
+        <div class="search-results">
+          <% if !@users.nil? %>
+>>>>>>> master
+            <% @users.each do |user| %>
+              <%= link_to(user.first_name, user_path(user.id), class: "btn btn-default") %>
+            <% end %>
+          <% end %>
+        </div>
+        <hr />
+        <br />
+        <div class="btn btn-default">
+            <%= link_to "Oops, it's my first time!", new_user_path  %>
+        </div>
+    </div>
+</div>
+<<<<<<< HEAD
+
+
+
+
+<div class="btn btn-default">
+  <%= link_to "Oops, it's my first time!", new_user_path  %>
+</div>
+=======
+>>>>>>> master
