@@ -14,27 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-jQuery(document).ready(function($){
-
-$('.search-results p').each(function(){
-$(this).attr('data-search-term', $(this).text().toLowerCase());
-});
-
-$('#searchbox').on('keyup', function(){
-
-var searchTerm = $(this).val().toLowerCase();
-
-    $('.search-results p').each(function(){
-
-        if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
-            $(this).show();
-        } else {
-            $(this).hide();
-        }
-
-    });
-
-});
-
-});
