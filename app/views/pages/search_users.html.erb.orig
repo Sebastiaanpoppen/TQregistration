@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+
+<div class="container">
+  <div class="row">
+    <h2>Search for existing user</h2>
+    <div id="custom-search-input">
+      <div class="input-group col-md-12">
+        <%= form_tag pages_search_users_path, :method => 'get' do %>
+            <p>
+              <%= text_field_tag :search, params[:search] %>
+              <%= submit_tag "Search", :search => nil %>
+            </p>
+
+        <% end %>
+
+        <% if !@users.nil? %>
+=======
 <div class="row">
     <div class="content">
         <div id="custom-search-input">
@@ -12,6 +29,7 @@
         </div>
         <div class="search-results">
           <% if !@users.nil? %>
+>>>>>>> master
             <% @users.each do |user| %>
               <%= link_to(user.first_name, user_path(user.id), class: "btn btn-default") %>
             <% end %>
@@ -24,3 +42,13 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
+
+
+
+
+<div class="btn btn-default">
+  <%= link_to "Oops, it's my first time!", new_user_path  %>
+</div>
+=======
+>>>>>>> master

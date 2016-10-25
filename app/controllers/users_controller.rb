@@ -4,10 +4,17 @@ before_action :set_user, only: [:index]
 def index
   if @user
     @users = User.all.order_by "first_name"
+    @admin = Admin.find(params[:admin_id])
+    respond_to do |format|
+      format.html
+      format.csv { send_data @users.to_csv }
+      format.xls  #{ send_data @users.to_csv(col_sep: "\t") }
+    end
   else
     redirect_to  new_admin_session_path
   end
 end
+
 
 def new
   @user = User.new
