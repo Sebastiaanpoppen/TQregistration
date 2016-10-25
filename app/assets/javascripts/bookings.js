@@ -59,7 +59,6 @@ function checkValues(){
 
    if ((title) && (genre)){
      $('#create-new-song').attr('disabled', 'disabled');
-     
      createbooking(title, genre);
    }
 }

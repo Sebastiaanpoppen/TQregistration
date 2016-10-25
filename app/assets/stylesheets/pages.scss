@@ -53,12 +53,12 @@
   margin-top: 2px;
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 .search-results .btn.btn-default{
-  width: 20%;
+  width: auto;
   border-radius: 3px;
-  margin: 0;
-  margin-right: 5px;
+  margin: 5px 5px;
   display: inline-block;
 }
 // END SEARCH BAR

@@ -2,12 +2,18 @@ class UsersController < ApplicationController
 before_action :set_user, only: [:index]
 
 def index
-  if @user
+  if @admin
     @users = User.all.order_by "first_name"
+    respond_to do |format|
+      format.html
+      format.csv { send_data @users.to_csv }
+      format.xls #{ send_data @users.to_xls(col_sep: "\t") }
+    end
   else
     redirect_to  new_admin_session_path
   end
 end
+
 
 def new
   @user = User.new
@@ -23,7 +29,12 @@ def create
   if @user.save
      redirect_to user_pages_checkedin_path(@user)
   else
-     render :new
+     if @user.errors[:email].nil?
+       render :new
+     else
+       @user = @user.errors[:email][0] #taking the existing user from the error
+       redirect_to user_path(@user)
+     end
   end
 end
 
@@ -43,7 +54,7 @@ private
 private
 
 def set_user
-  !current_admin.nil? ? @user = current_admin : @user = false
+  !current_admin.nil? ? @admin = current_admin : @admin = false
 end
 
 end
