@@ -5,8 +5,6 @@ FactoryGirl.define do
     company           { Faker::Company.name }
     email             { Faker::Internet.email }
     newsletter        true
-    admin             false
-    superadmin        false
 
 
     trait :active do
