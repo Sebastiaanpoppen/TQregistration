@@ -34,7 +34,7 @@ def create
        render :new
      else
        @user = @user.errors[:email][0] #taking the existing user from the error
-       redirect_to user_new_path(@user)
+       redirect_to user_pages_checkedin_path(@user)
      end
   end
 end
