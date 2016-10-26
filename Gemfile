@@ -30,6 +30,11 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'cancancan'
+gem 'chartkick'
+gem 'groupdate', '~> 2.1.1'
+gem 'active_median', '~> 0.1.0'
+
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
