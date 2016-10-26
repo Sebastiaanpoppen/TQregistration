@@ -4,6 +4,7 @@ before_action :set_user, only: [:index]
 def index
   if @admin
     @users = User.all.order_by "first_name"
+    @booking = Booking.new
     respond_to do |format|
       format.html
       format.csv { send_data @users.to_csv }
@@ -24,7 +25,7 @@ def show
 end
 
 def create
-  @user = User.create( user_params )
+  @user = User.create(user_params)
 
   if @user.save
      redirect_to user_pages_checkedin_path(@user)

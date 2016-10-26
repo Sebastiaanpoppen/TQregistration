@@ -2,12 +2,12 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :admin
 
-  validate :is_available?
+  validate :already_exist?
 
   private
 
-  def is_available?
-    if Booking.where("user_id = ? AND checkin = ?",user_id, checkin) != []
+  def already_exist?
+    if Booking.where("user_id = ? AND checkin = ?",user_id, checkin).first
       errors.add(:checkin, "Date Not Available")
       return false
     else

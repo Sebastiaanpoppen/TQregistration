@@ -7,12 +7,15 @@
                 </a>
                 <div class="box">
                     <h1>New Visit</h1>
+                    <%= form_for :booking, url: admin_bookings_path, html: {id: "new-booking-form"} do |f| %>
                     <div class="box-content">
-                        <input type="text" id="first_name" name="first_name" class="tag-title" placeholder="First name">
-                        <input type="text" id="last_name" name="last_name" class="tag-title" placeholder="Last name">
+                      <%= form_for :user do |u| %>
+                        <%= u.text_field :first_name, placeholder: "First name", class: "tag-title" %>
+                        <%= u.text_field :last_name, placeholder: "Last name", class: "tag-title" %>
                         <hr/>
-                        <input type="text" id="company" name="company" class="tag-title" placeholder="Company">
-                        <input type="text" id="email" name="email" class="tag-title" placeholder="example@gmail.com">
+                        <%= u.text_field :company, placeholder: "Company", class: "tag-title" %>
+                        <%= u.email_field :email, placeholder: "example@domain.com", class: "tag-title" %>
+                      <% end %>
                         <br/>
                         <h2>Select Date</h2>
                         <hr/>
@@ -35,10 +38,12 @@
                                 </h3>
                             </div>
                         </div>
-                        <input type="hidden" id="dateinput" name="date"></input>
+                        <%= f.hidden_field :checkin,  id: "dateinput" %>
+                        <input type="hidden" id="dateinput" name="checkin">
                         <hr/>
-                        <a href="#" class="btn btn-default" id="create-new-booking">Create</a>
+                        <input type="submit" class="btn btn-default" id="create-new-booking" value="Create">
                     </div>
+                    <% end %>
                 </div>
             </div>
         </div>

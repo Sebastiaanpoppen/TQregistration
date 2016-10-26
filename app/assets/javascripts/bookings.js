@@ -54,11 +54,14 @@ function addBooking(){
 }
 function checkValues(){
     event.preventDefault();
-   $('#first_name').val() ? first_name = $('#first_name').val() : $('#first_name').css({"border-color": "red", "box-shadow": "1px 1px 2px red"});
-   $('#last_name').val() ? last_name = $('#last_name').val() : $('#last_name').css({"border-color": "red", "box-shadow": "1px 1px 2px red"});
+    first_name = $('#first_name').val();
+    last_name = $('#last_name').val();
 
-   if ((title) && (genre)){
+   if((first_name!=="") && (last_name!=="")){
      $('#create-new-song').attr('disabled', 'disabled');
-     createbooking(title, genre);
+     $('#new-booking-form').submit();
+   }else{
+     $('#first_name').css({"border-color": "red", "box-shadow": "1px 1px 2px red"});
+     $('#last_name').css({"border-color": "red", "box-shadow": "1px 1px 2px red"});
    }
 }
