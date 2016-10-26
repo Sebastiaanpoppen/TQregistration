@@ -68,3 +68,17 @@ input[type="radio"], input[type="checkbox"] {
 .input-group {
   width: 100%;
 }
+
+.btn-back, .btn-back:hover, .btn-back:hover:focus, .btn-back:active, .btn-back:focus, .btn-back:active:hover, .btn-back:active:focus, .btn-back:active.focus, .btn-back.active:hover, .btn-back.active:focus, .btn-default.active.focus, .open > .btn-back.dropdown-toggle:hover
+ {
+  background-color: transparent;
+  border-color: transparent;
+  color: white;
+  padding-left: 0px;
+  border-left-width: 0px;
+  text-align: left;
+}
+
+.go-back-line {
+  text-align: left;
+}

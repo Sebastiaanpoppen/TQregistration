@@ -10,6 +10,8 @@
                 </span>
             </form>
         </div>
+        <hr />
+        <br />
 
         <div class="search-results">
           <% if !@users.nil? %>
@@ -18,10 +20,12 @@
             <% end %>
           <% end %>
         </div>
-        <hr />
+
         <br />
-        <div style="display:none;" class="btn btn-default">
-            <%= link_to "Oops, it's my first time!", new_user_path  %>
+        <br />
+        <div class="go-back-line">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <%= link_to "Oops, it's my first time!", new_user_path, class: "btn btn-default btn-back" %>
         </div>
     </div>
 </div>
@@ -31,7 +35,7 @@
   $(document).ready(function() {
     $("#searchbox").keyup(function() {
       var searchString = $('#searchbox').val();
-      if(searchString !== null && searchString !== undefined && searchString !== "") {
+      if(searchString !== null && searchString !== undefined) {
         $.get( "search_users.json?search=" + searchString, function( data ) {
           $('.search-results').empty();
           for(var i=0; data.length > i; i++) {
