@@ -10,35 +10,21 @@
                 </span>
             </form>
         </div>
-
         <div class="search-results">
           <% if !@users.nil? %>
             <% @users.each do |user| %>
+<<<<<<< HEAD
               <%= link_to(user.full_name, user_path(user.id), class: "btn btn-default") %>
+=======
+              <p><%= link_to(user.first_name, user_path(user.id), class: "btn btn-default") %></p>
+>>>>>>> master
             <% end %>
           <% end %>
         </div>
         <hr />
         <br />
-        <div style="display:none;" class="btn btn-default">
+        <div class="btn btn-default">
             <%= link_to "Oops, it's my first time!", new_user_path  %>
         </div>
     </div>
 </div>
-
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    $("#searchbox").keyup(function() {
-      var searchString = $('#searchbox').val();
-      if(searchString !== null && searchString !== undefined && searchString !== "") {
-        $.get( "search_users.json?search=" + searchString, function( data ) {
-          $('.search-results').empty();
-          for(var i=0; data.length > i; i++) {
-            $('.search-results').append('<a class="btn btn-default" href="../users/' + data[i].id + '">' + data[i].first_name + " " + data[i].last_name + "</a>");
-          }
-        });
-      }
-    })
-  })
-</script>

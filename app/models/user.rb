@@ -16,7 +16,7 @@ class User < ApplicationRecord
   end
 
   def self.search(search)
-    where('first_name ILIKE :search OR last_name ILIKE :search', search: "%#{search}%")
+    where('first_name ILIKE :search OR last_name ILIKE :search OR email ILIKE :search', search: "%#{search}%")
   end
 
   def self.to_csv(options = {})

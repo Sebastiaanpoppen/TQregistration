@@ -56,10 +56,13 @@
   flex-wrap: wrap;
 }
 .search-results .btn.btn-default{
+<<<<<<< HEAD
   width: auto;
+=======
+  width: 100%;
+>>>>>>> master
   border-radius: 3px;
-  margin: 0;
-  margin-right: 5px;
+  margin: 5px 5px;
   display: inline-block;
 }
 // END SEARCH BAR
