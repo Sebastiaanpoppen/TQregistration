@@ -15,11 +15,12 @@ class Booking < ApplicationRecord
   def self.from_today
     where('checkin <= ?', Time.now)
   end
+
   def set_date
     self.checkin.to_date
   end
+
   def already_exist?
-    debugger
     if Booking.where("user_id = ? AND checkin.to_date = ?",user_id, checkin.to_date).first
       errors.add(:checkin, "Date Not Available")
       return false
