@@ -19,7 +19,9 @@
                   <p></p>
                 </td>
                 <td class="col-md-2"><p>
-                    <a class="btn btn-default" href="#"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                    <%= link_to admin_booking_path(@admin.id, booking.id), :method => 'delete' do %>
+                      <i class="glyphicon glyphicon-remove-circle"></i>
+                   <% end %>
                 </p></td>
             </tr>
           <% end %>
