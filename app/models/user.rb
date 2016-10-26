@@ -2,8 +2,8 @@ class User < ApplicationRecord
   has_many :bookings
   before_create :set_email
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  validates :first_name, presence: { message: "Please fill in your first name" }
+  validates :last_name, presence: { message: "Please fill in your last name" }
   validate :existing?
 
   def self.order_by value
