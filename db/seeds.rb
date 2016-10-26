@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Booking.delete_all
 User.delete_all
 Admin.delete_all
 # creating email for Admins
@@ -23,3 +24,12 @@ user2 = User.create({first_name: Faker::Name.name, last_name: Faker::Name.last_n
 user3 = User.create({first_name: Faker::Name.name, last_name: Faker::Name.last_name, company: Faker::Company.name, email: Faker::Internet.email, newsletter: true})
 user4 = User.create({first_name: Faker::Name.name, last_name: Faker::Name.last_name, company: Faker::Company.name, email: Faker::Internet.email, newsletter: true})
 user5 = User.create({first_name: Faker::Name.name, last_name: Faker::Name.last_name, company: Faker::Company.name, email: Faker::Internet.email, newsletter: false})
+
+# create bookings
+
+Booking.create(admin: admin1, user: user2, checkin: -1.days.from_now)
+Booking.create(admin: admin2, user: user3, checkin: 2.days.from_now)
+Booking.create(admin: admin2, user: user1, checkin: Time.now)
+Booking.create(admin: admin2, user: user3, checkin: -2.days.from_now)
+Booking.create(admin: admin2, user: user4, checkin: -2.days.from_now)
+Booking.create(admin: admin2, user: user3, checkin: Time.now)

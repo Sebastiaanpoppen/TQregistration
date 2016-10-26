@@ -1,12 +1,16 @@
 class User < ApplicationRecord
+  has_many :bookings
+  before_create :set_email
+
   validates :first_name, presence: true
   validates :last_name, presence: true
-
+  validate :existing?
 
 
   def self.order_by value
     order(value)
   end
+
   def full_name
     "#{first_name} #{last_name}"
   end
@@ -23,5 +27,21 @@ class User < ApplicationRecord
       end
     end
   end
+  private
 
+  def existing?
+    @user = User.where('email = ?', email).first
+    if @user && !@user.email.empty?
+      errors.add(:email, @user)
+      return false
+    else
+      return true
+    end
+  end
+
+  def set_email
+    if email.empty? || email.blank?
+      self.email = nil
+    end
+  end
 end

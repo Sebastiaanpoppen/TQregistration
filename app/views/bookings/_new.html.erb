@@ -1,0 +1,51 @@
+<div class="page-wrapper">
+    <div class="new-booking">
+        <div class="row">
+            <div class="col-md-5 text-center">
+                <a href="#" class="btn btn-danger pull-right" id="abort-booking-creation">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
+                <div class="box">
+                    <h1>New Visit</h1>
+                    <%= form_for :booking, url: admin_bookings_path, html: {id: "new-booking-form"} do |f| %>
+                    <div class="box-content">
+                      <%= form_for :user do |u| %>
+                        <%= u.text_field :first_name, placeholder: "First name", class: "tag-title" %>
+                        <%= u.text_field :last_name, placeholder: "Last name", class: "tag-title" %>
+                        <hr/>
+                        <%= u.text_field :company, placeholder: "Company", class: "tag-title" %>
+                        <%= u.email_field :email, placeholder: "example@domain.com", class: "tag-title" %>
+                      <% end %>
+                        <br/>
+                        <h2>Select Date</h2>
+                        <hr/>
+                        <div class="date-picker" data-date="2014-02-03">
+                            <div class="date-container">
+                                <h3 class="date">
+                                    <span data-toggle="datepicker" data-method="subtract" data-type="d" class="fa fa-angle-left"></span>
+                                    <span class="text">17th</span>
+                                    <span data-toggle="datepicker" data-method="add" data-type="d" class="fa fa-angle-right"></span>
+                                </h3>
+                                <h2 class="month">
+                                    <span data-toggle="datepicker" data-method="subtract" data-type="M" class="fa fa-angle-left"></span>
+                                    <span class="text">December</span>
+                                    <span data-toggle="datepicker" data-method="add" data-type="M" class="fa fa-angle-right"></span>
+                                </h2>
+                                <h3 class="year">
+                                    <span data-toggle="datepicker" data-method="subtract" data-type="y" class="fa fa-angle-left"></span>
+                                    <span class="text">2014</span>
+                                    <span data-toggle="datepicker" data-method="add" data-type="y" class="fa fa-angle-right"></span>
+                                </h3>
+                            </div>
+                        </div>
+                        <%= f.hidden_field :checkin,  id: "dateinput" %>
+                        <input type="hidden" id="dateinput" name="checkin">
+                        <hr/>
+                        <input type="submit" class="btn btn-default" id="create-new-booking" value="Create">
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
