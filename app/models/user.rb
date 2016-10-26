@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :bookings
   before_create :set_email
+  before_create :set_newsletter
 
   validates :first_name, presence: { message: "Please fill in your first name" }
   validates :last_name, presence: { message: "Please fill in your last name" }
@@ -29,6 +30,11 @@ class User < ApplicationRecord
   end
   private
 
+  def set_newsletter
+    if newsletter.blank?
+      self.newsletter = false
+    end
+  end
   def existing?
     @user = User.where('email = ?', email).first
     if @user && !@user.email.empty?
@@ -46,7 +52,7 @@ class User < ApplicationRecord
   end
 
   def newsletter_checked?
-      if email.blank?
+    if email.blank?
       errors.add(:newsletter, "Email must be filled in if you want to receive our newsletter")
       return false
     end
