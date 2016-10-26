@@ -32,9 +32,6 @@ def create
   else
      if @user.errors[:email].nil?
        render :new
-     else
-       @user = @user.errors[:email][0] #taking the existing user from the error
-       redirect_to user_new_path(@user)
      end
   end
 end
