@@ -25,8 +25,8 @@ def show
 end
 
 def create
-
-  if @user = User.create(user_params)
+  @user = User.create(user_params)
+  if !@user.id.blank?
     booking = @user.bookings.build({checkin: Date.today})
     save_booking booking
   else
@@ -43,14 +43,6 @@ def create
     end
   end
 end
-
-
-def update
-end
-
-def delete
-end
-
 
 private
   def user_params
