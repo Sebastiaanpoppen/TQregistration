@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :authenticate_admin!
-  before_action :set_admin
+  before_action :authenticate_admin!, only: [:index, :edit, :destroy, :update]
+  before_action :set_admin, only: [:index, :edit, :destroy, :update]
   # before_action :set_company, only: [:create]
 
   def index
@@ -18,17 +18,18 @@ class BookingsController < ApplicationController
 
   def create
     user_data = user_params
-    if user = User.where('email = ?', user_data[:email]).first
-      @booking = user.bookings.build(booking_params.merge!({admin_id: @admin.id}))
-      save_booking  @booking
-    else
-
-      user = User.create(user_data)
-      if user.save
+    if params[:admin_id]
+      @admin = Admin.find(params[:admin_id])
+      if user = User.where('email = ?', user_data[:email]).first
         @booking = user.bookings.build(booking_params.merge!({admin_id: @admin.id}))
-        save_booking @booking
+        save_booking  @booking
       else
-        redirect_to admin_bookings_path
+        if user = User.create(user_data)
+          @booking = user.bookings.build(booking_params.merge!({admin_id: @admin.id}))
+          save_booking @booking
+        else
+          redirect_to admin_bookings_path
+        end
       end
     end
   end
