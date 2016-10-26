@@ -1,0 +1,7 @@
+<%= render 'admins/navbar' %>
+<%= render 'table' %>
+<%= render 'new' %>
+<p>
+  Download:
+  <%= link_to "Excel", admin_bookings_path(@admin.id, format: "xls") %>
+</p>
