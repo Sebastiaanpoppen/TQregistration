@@ -11,7 +11,7 @@ def index
       format.xls #{ send_data @users.to_xls(col_sep: "\t") }
     end
   else
-    redirect_to  new_admin_session_path
+    redirect_to new_admin_session_path
   end
 end
 
@@ -30,7 +30,7 @@ def create
   if @user.save
      redirect_to user_pages_checkedin_path(@user)
   else
-     if @user.errors[:email].nil?
+     if @user.errors
        render :new
      end
   end
