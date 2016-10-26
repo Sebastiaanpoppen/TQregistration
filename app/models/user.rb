@@ -6,7 +6,6 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validate :existing?
 
-
   def self.order_by value
     order(value)
   end
