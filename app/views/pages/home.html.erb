@@ -1,15 +1,23 @@
 
-<div class="content">
-
-  <%= link_to "/admin", id: "adminlink" do %>
-  <div class="image-logo" ><%= svg 'tq-diamond.svg' %></div>
+<div class="content content-home col-sm-8">
+  <div class="image-logo">
+    <%= link_to "/admin", id: "adminlink" do %>
+    <%= svg 'tq-diamond.svg' %>
+  </div>
   <% end %>
 
-  <h2 class="page-title">Welcome to TQ!</h2>
   <br>
-  <p>TQ is a curated tech space at the heart of Amsterdam founded by The Next Web. We help tech startups reach exponential growth, by providing them with the right talent, tools & training.</p>
-  <br>
-  <%= link_to "It's my first time", new_user_path, class: "btn btn-default" %>
 
-  <%= link_to "I have been here before", search_users_path, class: "btn btn-default" %>
+  <div>
+    <h2 class="page-title">Welcome to TQ!</h2>
+    <br>
+    <p class="regular-text">TQ is a curated tech space at the heart of Amsterdam founded by The Next Web. We help tech startups reach exponential growth, by providing them with the right talent, tools & training.</p>
+    <br>
+    <div class="buttons">
+    <%= link_to "IT'S MY FIRST TIME", new_user_path, class: "btn btn-default" %>
+    <%= link_to "I'VE BEEN HERE BEFORE", search_users_path, class: "btn btn-default" %>
+    </div>
+  </div>
+
+
 </div>
