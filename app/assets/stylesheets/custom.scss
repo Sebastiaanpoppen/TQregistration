@@ -2,21 +2,24 @@
   font-family: 'gt-walsheim-bold';
   src:url(font-path('gt-walsheim-bold.eot')) format('eot');
   src:url(font-path('gt-walsheim-bold.woff')) format('woff');
-
 }
 
 @font-face {
   font-family: 'gt-walsheim-bold-oblique';
   src:url(font-path('gt-walsheim-bold-oblique.eot')) format('eot');
   src:font-url(font-path('gt-walsheim-bold-oblique.woff')) format('woff');
-
 }
-
 
 @font-face {
   font-family: 'gt-walsheim-regular';
   src:url(font-path('gt-walsheim-regular.eot')) format('eot');
   src:url(font-path('gt-walsheim-regular.woff')) format('woff');
+}
+
+@font-face {
+  font-family: 'noe-display-black';
+  src:url(font-path('noe-display-black.eot')) format('eot');
+  src:url(font-path('noe-display-black.woff')) format('woff');
 }
 
 *{
