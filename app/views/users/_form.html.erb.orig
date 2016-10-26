@@ -1,6 +1,10 @@
 <div class="content content-form">
 
+<<<<<<< HEAD
   <%= form_for @user,  html: { autocomplete: "off" }, remote: false do |f| %>
+=======
+  <%= form_for @user,  html: { autocomplete: "off" } do |f| %>
+>>>>>>> master
 
     <div class="form-name">
       <div class="form-group">
