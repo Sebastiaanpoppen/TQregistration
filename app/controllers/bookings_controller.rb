@@ -23,18 +23,12 @@ class BookingsController < ApplicationController
       @booking = user.bookings.build(booking_params.merge!({admin_id: @admin.id}))
       save_booking @booking
     else
-
       user = User.create(user_data)
-      if user.id.blank?
+      if !user.id.blank?
         @booking = user.bookings.build(booking_params.merge!({admin_id: @admin.id}))
         save_booking  @booking
       else
-        if user.id.blank?
-          @booking = user.bookings.build(booking_params.merge!({admin_id: @admin.id}))
-          save_booking @booking
-        else
-          redirect_to admin_bookings_path
-        end
+        redirect_to admin_bookings_path
       end
     end
   end
