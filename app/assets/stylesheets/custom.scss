@@ -17,6 +17,12 @@
 }
 
 @font-face {
+  font-family: 'gt-walsheim-regular-oblique';
+  src:url(font-path('gt-walsheim-regular-oblique.eot')) format('eot');
+  src:url(font-path('gt-walsheim-regular-oblique.woff')) format('woff');
+}
+
+@font-face {
   font-family: 'noe-display-black';
   src:url(font-path('noe-display-black.eot')) format('eot');
   src:url(font-path('noe-display-black.woff')) format('woff');
@@ -46,7 +52,7 @@ body, html {
   img {
     width: 100%;
     height: auto;
-    max-height: 768px; /* HOME PAGE */
+    max-height: 768px; /* CUSTOM ACCORDING TO IMAGE PROVIDED */
   }
 }
 
@@ -73,7 +79,11 @@ body, html {
   padding-top: 30px;
 }
 
-.btn, .btn:active, .btn:hover, .btn-focus, .btn:active:hover {
+.btn,
+.btn:active,
+.btn:hover,
+.btn:focus,
+.btn:active:hover {
   border-radius: 20px;
   background-color: #DDBB88;
   color: #0000EE;
@@ -126,39 +136,77 @@ body, html {
   text-align: center;
 }
 
+.text-form {
+  font-size: 18px;
+}
+
+.text-bold {
+  font-family: 'gt-walsheim-bold';
+}
+
+.text-italic {
+  font-family: 'gt-walsheim-regular-oblique';
+}
+
 /* Form for new users */
 
-.form-name {
-  display: inline-block;
-  width: 100%;
+.form-checkbox {
+  text-align: initial;
 }
+
+html input[type="button"], input[type="reset"], input[type="submit"] {
+  /* couldn't rename as btn-create */
+  width: 160px;
+  height: 60px;
+  font-size: 16px;
+  border-radius: 50px;
+  background-color: #9999F8;
+  border-color: #9999F8;
+  color: white;
+  padding: 10px 25px 10px 25px;
+  margin: 0px 5px 0px 5px;
+  font-family: 'gt-walsheim-bold';
+  border-style: none;
+  }
+
+
+.btn-back,
+.btn-back:hover,
+.btn-back:hover:focus,
+.btn-back:active,
+.btn-back:focus,
+.btn-back:active:hover,
+.btn-back:active:focus,
+.btn-back:active.focus,
+.btn-back.active:hover,
+.btn-back.active:focus,
+.btn-back.active.focus,
+.open > .btn-back.dropdown-toggle:hover {
+
+  background-color: transparent;
+  border-color: transparent;
+  color: #9999F8;
+  padding-left: 0px;
+  border-left-width: 0px;
+  text-align: left;
+}
+
+
+
+
+
 
 .form-group {
   width: 100%;
 }
 
 
-input[type="radio"], input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  margin-top: 0px;
-
-}
-
 
 .input-group {
   width: 100%;
 }
 
-.btn-back, .btn-back:hover, .btn-back:hover:focus, .btn-back:active, .btn-back:focus, .btn-back:active:hover, .btn-back:active:focus, .btn-back:active.focus, .btn-back.active:hover, .btn-back.active:focus, .btn-back.active.focus, .open > .btn-back.dropdown-toggle:hover
- {
-  background-color: transparent;
-  border-color: transparent;
-  color: white;
-  padding-left: 0px;
-  border-left-width: 0px;
-  text-align: left;
-}
+
 
 .go-back-line {
   text-align: left;
