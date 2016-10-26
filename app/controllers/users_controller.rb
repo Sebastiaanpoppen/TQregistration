@@ -59,7 +59,6 @@ private
 
 private
 def save_booking booking
-  debugger
   if booking.save
     redirect_to user_pages_checkedin_path(booking.user)
   else
