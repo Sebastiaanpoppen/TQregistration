@@ -21,7 +21,6 @@ class Booking < ApplicationRecord
   end
 
   def already_exist?
-    debugger
     if Booking.where("user_id = ? AND checkin = ?",user_id, checkin.to_date).first
       errors.add(:checkin, "Date Not Available")
       return false
