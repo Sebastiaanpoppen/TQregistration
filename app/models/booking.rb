@@ -13,11 +13,11 @@ class Booking < ApplicationRecord
   end
 
   def self.from_today
-    where('checkin <= ?', Time.now)
+    where('checkin <= ?', Date.today)
   end
 
   def set_date
-    checkin.to_date
+    self.checkin = checkin.to_date 
   end
 
   def already_exist?
