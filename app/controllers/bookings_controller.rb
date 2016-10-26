@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
     user_data = user_params
     if user = User.where('email = ?', user_data[:email]).first
       @booking = user.bookings.build(booking_params.merge!({admin_id: @admin.id}))
-      save_booking  @booking
+      save_booking @booking
     else
 
       user = User.create(user_data)
@@ -31,6 +31,12 @@ class BookingsController < ApplicationController
         redirect_to admin_bookings_path
       end
     end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to admin_bookings_path
   end
 
   private
