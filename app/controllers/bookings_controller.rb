@@ -3,6 +3,18 @@ class BookingsController < ApplicationController
   before_action :set_admin
   # before_action :set_company, only: [:create]
 
+  def index
+    if @admin
+      @bookings = Booking.all.order_by_checkin(:desc).from_today
+      respond_to do |format|
+        format.html
+        format.csv { send_data @bookings.to_csv }
+        format.xls #{ send_data @users.to_xls(col_sep: "\t") }
+      end
+    else
+      redirect_to  new_admin_session_path
+    end
+  end
 
   def create
     user_data = user_params

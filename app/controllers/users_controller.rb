@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :set_user, only: [:index]
+before_action :set_admin, only: [:index]
 
 def index
   if @admin
@@ -54,7 +54,7 @@ private
 
 private
 
-def set_user
+def set_admin
   !current_admin.nil? ? @admin = current_admin : @admin = false
 end
 
