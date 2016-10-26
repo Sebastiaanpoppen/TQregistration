@@ -52,16 +52,16 @@ function addBooking(){
   $('.page-wrapper').fadeIn('slow');
   $('.new-booking').fadeIn('slow');
 }
-function checkValues(){
+function checkValues(event){
     event.preventDefault();
-    first_name = $('#first_name').val();
-    last_name = $('#last_name').val();
+    first_name = $('#user_first_name').val();
+    last_name = $('#user_last_name').val();
 
-   if((first_name!=="") && (last_name!=="")){
+   if((first_name) && (last_name)){
      $('#create-new-song').attr('disabled', 'disabled');
      $('#new-booking-form').submit();
    }else{
-     $('#first_name').css({"border-color": "red", "box-shadow": "1px 1px 2px red"});
-     $('#last_name').css({"border-color": "red", "box-shadow": "1px 1px 2px red"});
+     $('#user_first_name').css({"border-color": "red", "box-shadow": "1px 1px 2px red"});
+     $('#user_last_name').css({"border-color": "red", "box-shadow": "1px 1px 2px red"});
    }
 }
