@@ -18,6 +18,11 @@ class BookingsController < ApplicationController
 
   def create
     user_data = user_params
+<<<<<<< HEAD
+    if params[:admin_id]
+      @admin = Admin.find(params[:admin_id])
+      if user = User.where('email = ?', user_data[:email]).first
+=======
     if user = User.where('email = ?', user_data[:email]).first
       @booking = user.bookings.build(booking_params.merge!({admin_id: @admin.id}))
       save_booking @booking
@@ -25,6 +30,7 @@ class BookingsController < ApplicationController
 
       user = User.create(user_data)
       if user.save
+>>>>>>> master
         @booking = user.bookings.build(booking_params.merge!({admin_id: @admin.id}))
         save_booking  @booking
       else

@@ -1,7 +1,18 @@
-<%= render 'admins/navbar' %>
-<%= render 'table' %>
-<%= render 'new' %>
-<p>
-  Download:
-  <%= link_to "Excel", admin_bookings_path(@admin.id, format: "xls") %>
-</p>
+<div>
+
+  <%= render 'admins/navbar' %>
+  <%= render 'table' %>
+  <%= render 'new' %>
+  <p>
+    Download:
+    <%= link_to "Excel", admin_bookings_path(@admin.id, format: "xls") %>
+  </p>
+</div>
+<br>
+<br>
+
+
+<!-- check chartkick.com to see other possibilities of charts, graphics etc -->
+<div>
+  <%= line_chart Booking.group_by_day(:checkin, format: "%b %d, %Y").count %>
+</div>

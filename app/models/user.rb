@@ -28,8 +28,18 @@ class User < ApplicationRecord
       end
     end
   end
-  private
 
+  def newsletter_checked?
+    if !newsletter.blank?
+      if email.blank?
+        errors.add(:newsletter, "Email must be filled in if you want to receive our newsletter")
+        false
+      end
+    end
+  end
+
+
+  private
   def set_newsletter
     if newsletter.blank?
       self.newsletter = false
@@ -50,14 +60,4 @@ class User < ApplicationRecord
       self.email = nil
     end
   end
-
-  def newsletter_checked?
-    if !newsletter.blank?
-      if email.blank?
-        errors.add(:newsletter, "Email must be filled in if you want to receive our newsletter")
-        return false
-      end
-    end
-  end
-
 end
