@@ -25,17 +25,22 @@ def show
 end
 
 def create
-  @user = User.create(user_params)
 
-  if @user.save
-     redirect_to user_pages_checkedin_path(@user)
+  if @user = User.create(user_params)
+    booking = @user.bookings.build({checkin: Date.today})
+    save_booking booking
   else
-     if @user.errors[:email].blank?
-       render :new
-     else
-       @user = @user.errors[:email][0] #taking the existing user from the error
-       redirect_to user_pages_checkedin_path(@user)
-     end
+    if @user.errors[:email].blank?
+      render :new
+    else
+      @user = @user.errors[:email][0] #taking the existing user from the error
+      if @user.bookings.where("checkin = ?", Date.today)
+        redirect_to user_pages_checkedin_path(@user)
+      else
+        booking = @user.bookings.build({checkin: Date.today})
+        save_booking booking
+      end
+    end
   end
 end
 
@@ -53,7 +58,14 @@ private
   end
 
 private
-
+def save_booking booking
+  debugger
+  if booking.save
+    redirect_to user_pages_checkedin_path(booking.user)
+  else
+    render :new
+  end
+end
 def set_admin
   !current_admin.nil? ? @admin = current_admin : @admin = false
 end

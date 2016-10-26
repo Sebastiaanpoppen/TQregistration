@@ -17,6 +17,12 @@ class PagesController < ApplicationController
 
   def checkedin
     @user = User.find(params[:user_id])
+    if @user.bookings.where("checkin = ?", Date.today).first
+      #confirm the checking and
+    else
+      @user.bookings.create({checkin: Date.today})
+      #and confirm it
+    end
   end
 
 end
