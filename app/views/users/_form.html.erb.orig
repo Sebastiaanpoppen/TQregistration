@@ -1,9 +1,9 @@
 <div class="content content-form">
 
 <<<<<<< HEAD
-  <%= form_for @user do |f| %>
+  <%= form_for @user,  html: { autocomplete: "off" }, remote: false do |f| %>
 =======
-  <%= form_for @user,  html: { autocomplete: "off" }, remote: true do |f| %>
+  <%= form_for @user,  html: { autocomplete: "off" } do |f| %>
 >>>>>>> master
 
     <div class="form-name">
@@ -32,7 +32,8 @@
     </div>
 
     <div class="actions">
-      <%= link_to "Oh wait.. I've done this before", root_path, class: "btn btn-default" %>
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <%= link_to "Oh wait.. I've done this before", root_path, class: "btn-back btn btn-default" %>
       <%= f.submit (@user.new_record? ? "Create" : "Update"), class: "btn btn-default" %>
     </div>
 

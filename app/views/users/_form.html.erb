@@ -28,7 +28,8 @@
     </div>
 
     <div class="actions">
-      <%= link_to "Oh wait.. I've done this before", root_path, class: "btn btn-default" %>
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <%= link_to "Oh wait.. I've done this before", root_path, class: "btn-back btn btn-default" %>
       <%= f.submit (@user.new_record? ? "Create" : "Update"), class: "btn btn-default" %>
     </div>
 
