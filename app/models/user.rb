@@ -52,9 +52,11 @@ class User < ApplicationRecord
   end
 
   def newsletter_checked?
-    if email.blank?
-      errors.add(:newsletter, "Email must be filled in if you want to receive our newsletter")
-      return false
+    if !newsletter.blank?
+      if email.blank?
+        errors.add(:newsletter, "Email must be filled in if you want to receive our newsletter")
+        return false
+      end
     end
   end
 
