@@ -1,16 +1,18 @@
 <div class="content content-form">
 
+<<<<<<< HEAD
   <%= form_for @user,  html: { autocomplete: "off" }, remote: false do |f| %>
+=======
+  <%= form_for @user,  html: { autocomplete: "off" } do |f| %>
+>>>>>>> master
 
     <div class="form-name">
       <div class="form-group">
-        <%= f.text_field :first_name, placeholder: "First Name *", class: "form-control" %>
-        <%= @user.errors[:first_name].join %>
+        <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
       </div>
 
       <div class="form-group">
-        <%= f.text_field :last_name, placeholder: "Last Name *", class: "form-control" %>
-        <%= @user.errors[:last_name].join %>
+        <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
       </div>
     </div>
 

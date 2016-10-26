@@ -30,11 +30,12 @@ def create
   if @user.save
      redirect_to user_pages_checkedin_path(@user)
   else
+<<<<<<< HEAD
+     if @user.errors
+=======
      if @user.errors[:email].blank?
+>>>>>>> 1e440a1c3cc21cc5e9962cb502ee44735c829c93
        render :new
-     else
-       @user = @user.errors[:email][0] #taking the existing user from the error
-       redirect_to user_new_path(@user)
      end
   end
 end
