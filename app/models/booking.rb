@@ -1,9 +1,10 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :admin
-
-  validate :already_exist?
   before_create :set_date
+
+  validates :checkin, presence: true
+  validate :already_exist?
 
   private
 
@@ -15,6 +16,7 @@ class Booking < ApplicationRecord
     where('checkin <= ?', Time.now)
   end
   def set_date
+    self.checkin.to_date
   end
   def already_exist?
     debugger
