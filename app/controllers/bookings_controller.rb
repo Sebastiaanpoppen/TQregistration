@@ -25,11 +25,11 @@ class BookingsController < ApplicationController
     else
 
       user = User.create(user_data)
-      if user.save
+      if user.id.blank?
         @booking = user.bookings.build(booking_params.merge!({admin_id: @admin.id}))
         save_booking  @booking
       else
-        if user = User.create(user_data)
+        if user.id.blank?
           @booking = user.bookings.build(booking_params.merge!({admin_id: @admin.id}))
           save_booking @booking
         else
