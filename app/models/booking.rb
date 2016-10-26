@@ -3,6 +3,7 @@ class Booking < ApplicationRecord
   belongs_to :admin
 
   validate :already_exist?
+  before_create :set_date
 
   private
 
@@ -13,9 +14,11 @@ class Booking < ApplicationRecord
   def self.from_today
     where('checkin <= ?', Time.now)
   end
-
+  def set_date
+  end
   def already_exist?
-    if Booking.where("user_id = ? AND checkin = ?",user_id, checkin).first
+    debugger
+    if Booking.where("user_id = ? AND checkin.to_date = ?",user_id, checkin.to_date).first
       errors.add(:checkin, "Date Not Available")
       return false
     else

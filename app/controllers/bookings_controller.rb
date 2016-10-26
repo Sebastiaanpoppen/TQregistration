@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
         @booking = user.bookings.build(booking_params.merge!({admin_id: @admin.id}))
         save_booking @booking
       else
-        redirect_to admin_users_path
+        redirect_to admin_bookings_path
       end
     end
   end
@@ -39,7 +39,7 @@ class BookingsController < ApplicationController
     if booking.save
       redirect_to admin_booking_path(@admin.id, booking.id), notice: "Visit correctly created"
     else
-      redirect_to admin_users_path, alert: "Something whent wrog with the creation of the new visit"
+      redirect_to admin_bookings_path, alert: "Something whent wrog with the creation of the new visit"
     end
   end
 
