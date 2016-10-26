@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :email, presence: true, if: :newsletter_checked?
   validate :existing?
 
 
@@ -44,4 +45,12 @@ class User < ApplicationRecord
       self.email = nil
     end
   end
+
+  def newsletter_checked?
+      if email.blank?
+      errors.add(:newsletter, "Email must be filled in if you want to receive our newsletter")
+      return false
+    end
+  end
+
 end
