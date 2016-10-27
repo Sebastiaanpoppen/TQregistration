@@ -230,6 +230,7 @@ html input[type="button"], input[type="reset"], input[type="submit"] {
   border-style: none;
   text-decoration: none;
   float: right;
+  letter-spacing: 2px;
   position: absolute;
   right: 40px;
 }
@@ -371,4 +372,53 @@ input[type="submit"]:hover {
 
 .btn-search-results {
   margin: 5px;
+}
+
+/* LOGIN ADMIN */
+
+.panel-danger {
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 15px;
+}
+.panel-danger > .panel-heading {
+  background-color: transparent;
+  border-color: transparent;
+
+}
+.notice h3, .alert h3 {
+  font-size: 15px;
+  margin-left: 100px;
+}
+
+.text-alert {
+  color: red;
+}
+
+.alert {
+  margin: auto;
+  text-align: center;
+}
+
+/* BOOKING SHOW */
+.white-bg {
+  background-color: white;
+}
+
+.admin-buttons {
+  margin-top: 50px;
+}
+
+.logo-left {
+  margin-left: 0px;
+  margin-bottom: 20px;
+}
+
+.booking-table {
+  overflow-y: scroll;
+  height: 550px;
+}
+
+.text-table {
+  color: #9999F8;
 }
