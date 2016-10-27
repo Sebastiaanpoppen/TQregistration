@@ -2,9 +2,10 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :admin
   before_create :set_date
+  validate :already_exist?, on: [:create]
+  validate :in_the_past?, on: [:create]
 
   validates :checkin, presence: true
-  validate :already_exist?
 
   private
 
@@ -17,7 +18,7 @@ class Booking < ApplicationRecord
   end
 
   def set_date
-    self.checkin = checkin.to_date 
+    self.checkin = checkin.to_date
   end
 
   def already_exist?
@@ -26,6 +27,13 @@ class Booking < ApplicationRecord
       return false
     else
       return true
+    end
+  end
+
+  def in_the_past?
+    if checkin < Date.today
+      errors.add(:checkin, "Invalid dates")
+      return false
     end
   end
 end

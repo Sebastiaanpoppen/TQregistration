@@ -10,6 +10,8 @@ $(document).ready(function() {
 
     $('#bookings').DataTable();
 
+    $('.confirmed').change(confirm_booking);
+
     $('.date-picker').each(function () {
         var $datepicker = $(this),
             cur_date = ($datepicker.data('date') ? moment($datepicker.data('date'), "YYYY/MM/dd") : moment());
@@ -66,4 +68,31 @@ function checkValues(event){
      $('#user_first_name').css({"border-color": "red", "box-shadow": "1px 1px 2px red"});
      $('#user_last_name').css({"border-color": "red", "box-shadow": "1px 1px 2px red"});
    }
+}
+
+// CONFIRM BOOKING
+
+function confirm_booking(event){
+  $checked = $(event.target);
+  admin_id = $checked.val();
+  booking_id = $checked.attr('id');
+  checked = $checked.context.checked;
+  $.ajax({
+        type: "PATCH",
+        url: "/admins/"+admin_id+"/bookings/"+booking_id+".json",
+        data: JSON.stringify({
+            checked: checked
+        }),
+        processData: false,
+        contentType: "application/json",
+        dataType: "json"
+    }).done(function(data) {
+        booking = data;
+            console.log("success" + booking.confirmed);
+            $('.notice').fadeIn();
+        })
+        .fail(function(error) {
+            console.log(error);
+            $('.alert').fadeIn();
+        });
 }

@@ -50,6 +50,7 @@ private
   end
 
 private
+
 def save_booking booking
   if booking.save
     redirect_to user_pages_checkedin_path(booking.user)
@@ -57,6 +58,7 @@ def save_booking booking
     render :new
   end
 end
+
 def set_admin
   !current_admin.nil? ? @admin = current_admin : @admin = false
 end

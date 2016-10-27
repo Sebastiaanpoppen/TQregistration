@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
   before_action :authenticate_admin!, only: [:index, :edit, :destroy, :update]
   before_action :set_admin, only: [:index, :edit, :destroy, :update]
+  before_action :set_booking, only: [:update]
+   skip_before_action :verify_authenticity_token, only: [:update]
   # before_action :set_company, only: [:create]
 
   def index
@@ -33,6 +35,21 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    checked = params[:checked]
+    if @booking.update({confirmed: checked})
+      respond_to do |format|
+        format.html {redirect_to admin_bookings_path, notice: "Booking for #{@booking.user.full_name} confirmed"}
+        format.json  {render json: @booking, status: :ok, location: admin_bookings_path}
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to admin_bookings_path, alert: 'An error occured during the confimation of your booking.' }
+        format.json { redirect_to admin_bookings_path, status: :unprocesseble}
+      end
+    end
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
@@ -61,6 +78,9 @@ class BookingsController < ApplicationController
     @admin = Admin.find(params[:admin_id])
   end
 
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
   # def set_company user
   #   params[:user].company.empty? ? params[:user].company = @admin.user.company : params[:user].company.capitalize
   # end
