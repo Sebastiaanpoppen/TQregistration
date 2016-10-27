@@ -126,10 +126,12 @@ body, html {
 .content-form {
   background-color: white;
   height: 2000px;
+  padding: 40px 40px 20px 40px;
 }
 
 .page-title-blue {
   color: #0000EE;
+  margin-top: 15px;
 }
 
 .text-block-form {
@@ -137,7 +139,8 @@ body, html {
 }
 
 .text-form {
-  font-size: 18px;
+  font-size: 15px;
+  padding-bottom: 4px;
 }
 
 .text-bold {
@@ -151,7 +154,13 @@ body, html {
 /* Form for new users */
 
 .form-checkbox {
-  text-align: initial;
+  display: inline-flex;
+}
+
+.text-color {
+  color: #9999F8;
+  margin-bottom: 0px;
+  padding: 2px 0px 0px 0px;
 }
 
 html input[type="button"], input[type="reset"], input[type="submit"] {
@@ -164,10 +173,48 @@ html input[type="button"], input[type="reset"], input[type="submit"] {
   border-color: #9999F8;
   color: white;
   padding: 10px 25px 10px 25px;
-  margin: 0px 5px 0px 5px;
+  margin: 0px 5px 0px 50px;
   font-family: 'gt-walsheim-bold';
   border-style: none;
-  }
+  text-decoration: none;
+  float: right;
+  position: absolute;
+  right: 40px;
+}
+
+.form-control,
+.form-control:focus {
+  outline: 0px;
+  border: 0px;
+  border-bottom: 1px solid gray;
+  box-shadow: none;
+  border-radius: 0px;
+  padding: 0px 5px 0px 5px;
+  font-size: 20px;
+}
+
+.form-full-name {
+  display: inline-flex;
+  width: 100%;
+}
+
+.text-placeholder {
+  color: #9999F8;
+  text-align: initial;
+  border: 0px;
+  padding: 0px 0px 4px 0px;
+  margin: 0px;
+}
+
+.form-input {
+  margin: 5px 10px 30px 10px;
+  width: 97%;
+  text-align: initial;
+}
+
+.glyphicon {
+  font-size: 15px;
+}
 
 
 .btn-back,
@@ -180,15 +227,24 @@ html input[type="button"], input[type="reset"], input[type="submit"] {
 .btn-back:active.focus,
 .btn-back.active:hover,
 .btn-back.active:focus,
-.btn-back.active.focus,
-.open > .btn-back.dropdown-toggle:hover {
+.btn-back.active.focus {
 
   background-color: transparent;
   border-color: transparent;
-  color: #9999F8;
+  color: #DDBB88;
   padding-left: 0px;
+  padding-bottom: 5px;
   border-left-width: 0px;
   text-align: left;
+  margin-left: 0px;
+  margin-top: 5px;
+  font-family: 'gt-walsheim-regular';
+  width: 50%;
+}
+
+.row-buttons {
+  display: inline-flex;
+  width: 100%;
 }
 
 
