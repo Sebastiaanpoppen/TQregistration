@@ -1,45 +1,57 @@
 <div class="row">
-    <div class="content">
-        <div id="custom-search-input">
-            <form class="input-group col-md-12" action="<%= search_users_path %>">
-                <input autocomplete="off" type="text" id="searchbox" name="search" class="search-query form-control" placeholder="Name, surname, email address"/>
-                <span class="input-group-btn">
-                    <button class="btn" type="submit">
-                        <span class="search glyphicon glyphicon-search"></span>
-                    </button>
-                </span>
-            </form>
-        </div>
-        <hr />
-        <br />
+  <div class="col-sm-9 col-md-8 text-block-form">
+    <div class="col-sm-1 col-md-1">
+    </div>
+    <div class="col-sm-11 col-md-11 content-form">
+      <div class="image-logo-large logo-blue-bg">
+        <%= svg 'tq-diamond.svg' %>
+      </div>
+      <br>
 
-        <div class="search-results">
-          <% if !@users.nil? %>
-            <% @users.each do |user| %>
-              <%= link_to user.full_name, user_path(user.id), class: "btn btn-default" %>
-            <% end %>
+      <h2 class="page-title page-title-blue">Find Yourself<h2>
+      <p class="text-form">Please type in your first name, last name or email address.</p>
+
+      <div id="custom-search-input">
+        <form class="input-group col-md-12" action="<%= search_users_path %>">
+          <input autocomplete="off" type="text" id="searchbox" name="search" class="search-query form-control">
+          <span class="input-group-btn">
+            <button class="btn" type="submit">
+              <span class="search glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </form>
+      </div>
+      <br>
+
+      <div class="search-results">
+        <% if !@users.nil? %>
+          <% @users.each do |user| %>
+            <%= link_to user.full_name, user_path(user.id), class: "btn btn-glyphicon" %>
           <% end %>
-        </div>
+        <% end %>
+      </div>
 
         <br />
         <br />
-        <div class="go-back-line">
+        <div class="btn-back btn-back-search">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <%= link_to "Oops, it's my first time!", new_user_path, class: "btn btn-default btn-back" %>
+            <%= link_to "Oops, it's my first time!", new_user_path, class: "btn-back text-form" %>
         </div>
     </div>
 </div>
 
+</div>
 
 <script type="text/javascript">
   $(document).ready(function() {
     $("#searchbox").keyup(function() {
       var searchString = $('#searchbox').val();
+
       if(searchString !== null && searchString !== undefined) {
         $.get( "search_users.json?search=" + searchString, function( data ) {
           $('.search-results').empty();
           for(var i=0; data.length > i; i++) {
-            $('.search-results').append('<a class="btn btn-default" href="../users/' + data[i].id + '">' + data[i].first_name + " " + data[i].last_name + "</a>");
+            $('.search-results').append('<a class="btn btn-search-results" href="../users/' + data[i].id + '">' + data[i].first_name + " " + data[i].last_name + "</a>");
           }
         });
       }

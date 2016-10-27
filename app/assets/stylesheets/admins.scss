@@ -4,14 +4,22 @@
 #bookings_filter{
   display: block;
   width: 100%;
+  font-size: 20px;
+  color: #9999F8;
+
 }
+
 #bookings_filter input[type="search"]{
   margin-top: 20px;
   margin-left: 5px;
   width: 400px;
   padding: 5px;
   border: 0;
-  border-bottom: 1px solid rgb(143, 143, 143);
+  border-bottom: 1px solid #9999F8;
+  font-family: 'gt-walsheim-regular';
+  font-size: 20px;
+  color: #0000EE;
+
   input:focus{
     outline: none;
     outline-style: hidden;
@@ -25,13 +33,16 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  width: 100%;
 
   a{
     width: auto;
     min-width: 50px;
+    font-size: 15px;
     padding: 10px;
-    border: 1px solid #DDBB88;
-    border-radius: 5px;
+    border: 1px solid  #9999F8;
+    background-color:  #9999F8;
+    border-radius: 50px;
     text-decoration: none;
     display: inline-block;
     text-align: center;
@@ -54,6 +65,9 @@
   margin-top: 50px;
 }
 
+table {
+  table-layout: fixed;
+}
 
 div.dataTables_wrapper {
         margin-bottom: 3em;
@@ -83,4 +97,10 @@ table tbody tr .btn-delete:hover{
 }
 #chart-1{
   height: 500px !important;
+}
+
+#bookings_info {
+  color: #9999F8;
+  font-family: 'gt-walsheim-regular';
+  font-size: 16px;
 }
