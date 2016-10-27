@@ -47,18 +47,30 @@ body, html {
 /* HOME PAGE */
 
 .image-home {
-  padding: 0px;
-
+  padding-left: 0px;
   img {
     width: 100%;
     height: auto;
-    max-height: 768px; /* CUSTOM ACCORDING TO IMAGE PROVIDED */
+     /*max-height: 768px; /* CUSTOM ACCORDING TO IMAGE PROVIDED */
+  }
+}
+
+.image-form {
+  padding: 0px;
+  background-color: #eaeaea;
+
+  img {
+    margin-top: 15px;
+    margin-left: 15px;
   }
 }
 
 .text-block-home {
   text-align: center;
   padding-top: 100px;
+  padding-left: 0px;
+  padding-right: 0px;
+
 }
 
 .page-title {
@@ -84,14 +96,16 @@ body, html {
 .btn:hover,
 .btn:focus,
 .btn:active:hover {
-  border-radius: 20px;
+  border-radius: 50px;
   background-color: #DDBB88;
   color: #0000EE;
-  font-size: 12px;
+  font-size: 17px;
   width: auto;
+  height: 50px;
   padding: 10px 25px 10px 25px;
   margin: 0px 5px 0px 5px;
   font-family: 'gt-walsheim-bold';
+  letter-spacing: 1px;
 }
 
 /* IMAGE LOGO */
@@ -105,6 +119,12 @@ body, html {
 .image-logo-medium {
   width: 100px;
   height: 100px;
+  margin: auto;
+}
+
+.image-logo-large {
+  width: 120px;
+  height: 120px;
   margin: auto;
 }
 
@@ -136,11 +156,13 @@ body, html {
 
 .text-block-form {
   text-align: center;
+  padding-right: 0px;
 }
 
 .text-form {
   font-size: 15px;
   padding-bottom: 4px;
+  color: #0000EE;
 }
 
 .text-bold {
@@ -182,15 +204,25 @@ html input[type="button"], input[type="reset"], input[type="submit"] {
   right: 40px;
 }
 
+input[type="submit"]:focus,
+input[type="submit"]:hover {
+  background-color: #0000EE;
+  border-color: #0000EE;
+  color: white;
+  padding: 10px
+}
+
+
 .form-control,
 .form-control:focus {
   outline: 0px;
   border: 0px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #9999F8;
   box-shadow: none;
   border-radius: 0px;
   padding: 0px 5px 0px 5px;
   font-size: 20px;
+  color: #0000EE;
 }
 
 .form-full-name {
@@ -216,6 +248,14 @@ html input[type="button"], input[type="reset"], input[type="submit"] {
   font-size: 15px;
 }
 
+.error-message {
+  font-size: 15px;
+  padding-top: 4px;
+  color: red;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  border-bottom: 0px;
+}
 
 .btn-back,
 .btn-back:hover,
@@ -247,28 +287,24 @@ html input[type="button"], input[type="reset"], input[type="submit"] {
   width: 100%;
 }
 
+/* Welcome page */
 
-
-
-
-
-.form-group {
-  width: 100%;
+.btn-done,
+.btn-done:active,
+.btn-done:hover,
+.btn-done:focus,
+.btn-done:active:hover {
+  color: white;
+  letter-spacing: 2px;
+  width: 30%;
+  font-family: 'gt-walsheim-regular';
 }
 
-
-
-.input-group {
-  width: 100%;
+.welcome-title {
+  line-height: 150%;
 }
 
-
-
-.go-back-line {
-  text-align: left;
-}
-
-.form-errors {
-  list-style: none;
-  padding: 0px;
+.text-welcome {
+  font-size: 20px;
+  padding: 0px 100px 0px 100px;
 }

@@ -5,13 +5,17 @@
       <div class="form-input">
         <p class="text-form text-placeholder">First Name *</p>
         <%= f.text_field :first_name, class: "form-control" %>
-        <%= @user.errors[:first_name].join %>
+        <div class="error-message">
+          <%= @user.errors[:first_name].join %>
+        </div>
       </div>
 
       <div class="form-input">
         <p class="text-form text-placeholder">Last Name *</p>
         <%= f.text_field :last_name, class: "form-control" %>
-        <%= @user.errors[:last_name].join %>
+        <div class="error-message">
+          <%= @user.errors[:last_name].join %>
+        </div>
       </div>
     </div>
 
@@ -23,7 +27,9 @@
     <div class="form-input">
       <p class="text-form text-placeholder">Email Address</p>
       <%= f.email_field :email, class: "form-control" %>
-      <%= @user.errors[:newsletter].join %>
+      <div class="error-message">
+        <%= @user.errors[:newsletter].join %>
+      </div>
     </div>
 
 
