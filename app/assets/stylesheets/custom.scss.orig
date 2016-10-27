@@ -58,6 +58,12 @@ body, html {
      /*max-height: 768px; /* CUSTOM ACCORDING TO IMAGE PROVIDED */
   }
 }
+<<<<<<< HEAD
+
+.image-form {
+  padding: 0px;
+  background-color: #eaeaea;
+=======
 .notice, .alert{
   position: absolute;
   z-index: 1000;
@@ -74,9 +80,7 @@ body, html {
     margin: 0;
   }
 }
-.image-form {
-  padding: 0px;
-  background-color: #eaeaea;
+>>>>>>> master
 
   img {
     margin-top: 15px;

@@ -5,11 +5,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
-    <%= stylesheet_link_tag 'http://yandex.st/bootstrap/3.1.1/css/bootstrap.min.css' %>
-    <%= javascript_include_tag 'http://yandex.st/bootstrap/3.1.1/js/bootstrap.min.js' %>
     <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-
-
 
     <%= csrf_meta_tags %>
 
@@ -22,13 +18,7 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="wrapper">
           <%= render 'shared/notice' %>
           <%= yield %>
-        </div>
-      </div>
-    </div>
   </body>
 </html>
