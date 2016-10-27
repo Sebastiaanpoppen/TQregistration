@@ -8,6 +8,8 @@ $(document).ready(function() {
     });
     $('#create-new-booking').click(checkValues);
 
+    $('#bookings').DataTable();
+
     $('.date-picker').each(function () {
         var $datepicker = $(this),
             cur_date = ($datepicker.data('date') ? moment($datepicker.data('date'), "YYYY/MM/dd") : moment());
@@ -58,7 +60,7 @@ function checkValues(event){
     last_name = $('#user_last_name').val();
 
    if((first_name) && (last_name)){
-     $('#create-new-song').attr('disabled', 'disabled');
+     $('#create-new-booking').attr('disabled', 'disabled');
      $('#new-booking-form').submit();
    }else{
      $('#user_first_name').css({"border-color": "red", "box-shadow": "1px 1px 2px red"});

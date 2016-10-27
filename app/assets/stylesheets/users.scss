@@ -1,39 +1,3 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.navbar a{
-  color: #FFF;
-  font-size: 30px;
-}
-.navbar .btn-primary{
-  color: #FFF;
-  font-size: 16px;
-  background-color: transparent;
-  border: 1px solid #FFF;
-  width: 100px;
-}
-.navbar .btn-primary:hover{
-  color: rgba(128, 128, 128, 1);
-  font-size: 16px;
-  background-color: #FFF;
-}
-.btn-primary.create {margin-top:10px;}
-.table{
-  margin-top: 50px;
-}
-.table tbody tr:hover{
-  background-color: rgba(212, 212, 212, 0.3);
-}
-.table tbody tr .btn-default{
-  width: 25px;
-  height: 25px;
-  font-size: 25px;
-  padding: 0;
-  background: transparent;
-  border: none;
-  color: #FFF;
-  :hover{
-    color: rgba(245, 18, 18, 0.77);
-  }
-}

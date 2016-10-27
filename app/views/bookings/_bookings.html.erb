@@ -1,0 +1,19 @@
+<% @bookings.each_with_index do |booking, i| %>
+
+        <tr>
+            <td><p><%= i + 1 %></p></td>
+            <td><p><%= booking.user.full_name %><br/>
+                (Guest)</p></p></td>
+            <td><p><span class="label <%= past? booking.checkin  %>"> <%= booking.checkin.strftime("%D") %></span></p></td>
+            <td><p><%= user_company booking.user %></p></td>
+            <td><p><%= user_email booking.user %></p></td>
+            <td class="col-md-2">
+              <p></p>
+            </td>
+            <td class="col-md-2"><p>
+                <%= link_to admin_booking_path(@admin.id, booking.id), :method => 'delete', class: "btn-delete" do %>
+                  <i class="glyphicon glyphicon-remove-circle"></i>
+               <% end %>
+            </p></td>
+        </tr>
+<% end %>
