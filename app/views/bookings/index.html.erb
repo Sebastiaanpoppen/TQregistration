@@ -14,5 +14,5 @@
 
 <!-- check chartkick.com to see other possibilities of charts, graphics etc -->
 <div>
-  <%= line_chart Booking.group_by_day(:checkin, format: "%b %d, %Y").count %>
+  <%= line_chart Booking.group_by_day(:checkin, format: "%b %d, %Y", library: {yAxis: {allowDecimals: false}}).count %>
 </div>

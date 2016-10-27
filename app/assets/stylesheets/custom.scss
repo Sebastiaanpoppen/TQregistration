@@ -1,23 +1,48 @@
-*{
+@font-face {
+  font-family: 'gt-walsheim-bold';
+  src:url(font-path('gt-walsheim-bold.eot')) format('eot');
+  src:url(font-path('gt-walsheim-bold.woff')) format('woff');
+}
+
+@font-face {
+  font-family: 'gt-walsheim-bold-oblique';
+  src:url(font-path('gt-walsheim-bold-oblique.eot')) format('eot');
+  src:font-url(font-path('gt-walsheim-bold-oblique.woff')) format('woff');
+}
+
+@font-face {
+  font-family: 'gt-walsheim-regular';
+  src:url(font-path('gt-walsheim-regular.eot')) format('eot');
+  src:url(font-path('gt-walsheim-regular.woff')) format('woff');
+}
+
+@font-face {
+  font-family: 'noe-display-black';
+  src:url(font-path('noe-display-black.eot')) format('eot');
+  src:url(font-path('noe-display-black.woff')) format('woff');
+}
+
+
+/*GENERAL STYLING*/
+
+* {
   box-sizing: border-box;
   transition: 0.2s;
 }
+
 body, html {
-  background-color: rgb(117, 117, 117);
-  color: #ffffff;
   width: 100%;
-  height: 100%
+  height: 100%;
+  font-family: 'gt-walsheim-regular';
 }
 
 .content {
-  width: 800px;
-  height: auto;
   text-align: center;
-  margin: auto;
-  margin-top: 120px;
   position:absolute; /*it can be fixed too*/
   left:0; right:0;
   top:0; bottom:0;
+  background-color: #0000EE;
+  padding: 50px;
 
   /*this to solve "the content will not be cut when the window is smaller than the content": */
   max-width:100%;
@@ -25,15 +50,48 @@ body, html {
   overflow:auto;
 }
 
+
+/*HOME PAGE*/
+
+.content-home {
+  background-color: #0000EE;
+  padding-top: 80px;
+
+}
+
+.page-title {
+  font-family: 'noe-display-black';
+  font-size: 50px;
+  color: white;
+}
+
+.regular-text {
+  font-size: 18px;
+  color: white;
+  width: 80%;
+  margin: auto;
+}
+
+.buttons {
+  padding-top: 30px;
+}
+
+.btn, .btn:active, .btn:hover, .btn-focus, .btn:active:hover {
+  border-radius: 20px;
+  background-color: #DDBB88;
+  color: #0000EE;
+  font-size: 12px;
+  width: auto;
+  padding: 10px 25px 10px 25px;
+  margin: 0px 5px 0px 5px;
+  font-family: 'gt-walsheim-bold';
+}
+
+
 .content-form {
   height: 400px;
 }
 
-.btn {
-  border-radius: 20px;
-  color: rgb(117, 117, 117);
-  width: 250px;
-}
 
 /* Form for new users */
 
@@ -60,16 +118,11 @@ input[type="radio"], input[type="checkbox"] {
   margin: auto;
 }
 
-.content {
-  padding: 50px;
-  padding-top: 0px;
-}
-
 .input-group {
   width: 100%;
 }
 
-.btn-back, .btn-back:hover, .btn-back:hover:focus, .btn-back:active, .btn-back:focus, .btn-back:active:hover, .btn-back:active:focus, .btn-back:active.focus, .btn-back.active:hover, .btn-back.active:focus, .btn-default.active.focus, .open > .btn-back.dropdown-toggle:hover
+.btn-back, .btn-back:hover, .btn-back:hover:focus, .btn-back:active, .btn-back:focus, .btn-back:active:hover, .btn-back:active:focus, .btn-back:active.focus, .btn-back.active:hover, .btn-back.active:focus, .btn-back.active.focus, .open > .btn-back.dropdown-toggle:hover
  {
   background-color: transparent;
   border-color: transparent;
