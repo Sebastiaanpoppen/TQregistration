@@ -1,25 +1,29 @@
-<div class="table-responsive col-md-12">
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>#</th><th>Name</th><th>Checkin Date</th>
-                <th>Company</th><th>Email</th><th>Confirmation</th><th>Delete</th>
-            </tr>
-        </thead>
-        <% get_total_pages @bookings %>
-        <% while(@page < @total_pages) do%>
-          <% slice_bookings %>
-          <%= render 'bookings' %>
-          <% @page += 1 %>
-        <% end %>
-    </table>
-</div>
-<div class="pull-right">
-    <ul class="pagination">
-        <li><a href="#">«</a></li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">»</a></li>
-    </ul>
+<div class="dataTables_wrapper">
+  <table id="bookings" class="display table" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Checkin Date</th>
+            <th>Company</th>
+            <th>Email</th>
+            <th>Confirmation</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Checkin Date</th>
+          <th>Company</th>
+          <th>Email</th>
+          <th>Confirmation</th>
+          <th>Delete</th>
+        </tr>
+    </tfoot>
+    <tbody>
+      <%= render 'bookings' %>
+    </tbody>
+  </table>
 </div>

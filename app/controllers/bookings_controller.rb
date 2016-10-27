@@ -43,7 +43,7 @@ class BookingsController < ApplicationController
 
   def save_booking booking
     if booking.save
-      redirect_to admin_booking_path(@admin.id, booking.id), notice: "Visit correctly created"
+      redirect_to admin_bookings_path(@admin.id), notice: "Visit correctly created"
     else
       redirect_to admin_bookings_path, alert: "Something whent wrog with the creation of the new visit"
     end

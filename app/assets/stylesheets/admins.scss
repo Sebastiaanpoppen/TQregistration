@@ -1,39 +1,86 @@
-.navbar a{
-  color: #FFF;
-  font-size: 30px;
+#bookings_length{
+  display: none !important;
 }
-.navbar .btn-primary{
-  color: #FFF;
-  font-size: 16px;
-  background-color: transparent;
-  border: 1px solid #FFF;
-  width: 100px;
+#bookings_filter{
+  display: block;
+  width: 100%;
 }
-.navbar .btn-primary:hover{
-  color: rgba(128, 128, 128, 1);
-  font-size: 16px;
-  background-color: #FFF;
+#bookings_filter input[type="search"]{
+  margin-top: 20px;
+  margin-left: 5px;
+  width: 400px;
+  padding: 5px;
+  border: 0;
+  border-bottom: 1px solid rgb(143, 143, 143);
+  input:focus{
+    outline: none;
+    outline-style: hidden;
+    box-shadow: 0 2px 2px #DDBB88;
+  }
 }
+
+#bookings_paginate{
+  float: right;
+  width: 400px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  a{
+    width: auto;
+    min-width: 50px;
+    padding: 10px;
+    border: 1px solid #DDBB88;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    margin-left: 5px;
+    cursor: pointer;
+  }a:hover{
+    background-color: #DDBB88;
+  }
+  #bookings_next, #bookings_previous{
+    width: 100px;
+  }
+}
+#bookings_info{
+  width: 200px;
+  display: inline-block;
+}
+
 .btn-primary.create {margin-top:10px;}
 .table{
   margin-top: 50px;
 }
-.table-responsive, .table{
-  height: 600px;
-  overflow: hidden;
-}
-.table tbody tr:hover{
+
+
+div.dataTables_wrapper {
+        margin-bottom: 3em;
+    }
+table tbody tr:hover{
   background-color: rgba(212, 212, 212, 0.3);
 }
-.table tbody tr .btn-default{
-  width: 25px;
+table tbody tr .btn-delete{
+  width: 50px;
   height: 25px;
   font-size: 25px;
   padding: 0;
-  background: transparent;
-  border: none;
-  color: #FFF;
-  :hover{
-    color: rgba(245, 18, 18, 0.77);
+}
+table tbody tr .btn-delete:hover{
+  color: rgba(245, 18, 18, 0.77);
+}
+.banner, .header{
+  width: 100%;
+  margin: 10px auto;
+  border-bottom: 1px solid rgb(39, 29, 233);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .image-logo{
+    margin-left: 0;
   }
+}
+#chart-1{
+  height: 500px !important;
 }
