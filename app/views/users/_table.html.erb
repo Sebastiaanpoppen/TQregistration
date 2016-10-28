@@ -1,33 +1,28 @@
-        <div class="table-responsive col-md-12">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>#</th><th>Name</th>
-                        <th>Company</th><th>Email</th><th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  <% @users.each_with_index do |user, i| %>
-                    <tr>
-                        <td><p><%= i %></p></td>
-                        <td><p><%= user.full_name %><br/>
-                            (Guest)</p></p></td>
-                        <td><p><%= user_company user %></p></td>
-                        <td><p><%= user_email user %></p></td>
-                        <td class="col-md-2"><p>
-                            <a class="btn btn-default" href="#"><span class="glyphicon glyphicon-remove-circle"></span></a>
-                        </p></td>
-                    </tr>
-                  <% end %>
-                </tbody>
-            </table>
-        </div>
-        <div class="pull-right">
-            <ul class="pagination">
-                <li><a href="#">«</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">»</a></li>
-            </ul>
-        </div>
+<div class="dataTables_wrapper">
+    <table id="bookings" class="display table" cellspacing="0" width="100%">
+        <thead>
+            <tr class="text-form text-table">
+                <th>#</th>
+                <th>NAME</th>
+                <th>LAST CHECKIN</th>
+                <th>COMPANY</th>
+                <th>EMAIL</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr class="text-form text-table">
+                <th>#</th>
+                <th>NAME</th>
+                <th>CHECKING DATE</th>
+                <th>COMPANY</th>
+                <th>EMAIL</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <%= render 'users' %>
+        </tbody>
+    </table>
+    <p class="text-form">
+      <%= link_to "DOWNLOAD EXCEL SHEET", admin_users_path(@admin.id, format: "xls"), class: "btn btn-create" %>
+    </p>
+</div>
