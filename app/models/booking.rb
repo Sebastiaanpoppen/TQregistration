@@ -4,7 +4,6 @@ class Booking < ApplicationRecord
   before_create :set_date
   validate :already_exist?, on: [:create]
   validate :in_the_past?, on: [:create]
-
   validates :checkin, presence: true
 
   private

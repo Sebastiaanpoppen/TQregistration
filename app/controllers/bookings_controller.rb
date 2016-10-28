@@ -58,6 +58,14 @@ class BookingsController < ApplicationController
     redirect_to admin_bookings_path
   end
 
+  def destroy_365days
+    @bookings = Booking.where("checkin < ?", -365.days.from_now.to_date)
+    @bookings.each do |booking|
+      booking.destroy
+    end
+    redirect_to admin_bookings_path, notice: "Booking correcly deleted"
+  end
+
   private
 
   def save_booking booking

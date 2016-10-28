@@ -28,9 +28,9 @@ user5 = User.create({first_name: Faker::Name.name, last_name: Faker::Name.last_n
 # create bookings
 
 
-Booking.create(admin: admin2, user: user3, checkin: 2.days.from_now.to_date)
+Booking.create(admin: admin2, user: user3, checkin: -365.days.from_now.to_date)
 Booking.create(admin: admin2, user: user1, checkin: Date.today)
 Booking.create(admin: admin3, user: user3, checkin: Date.today)
-Booking.create(admin: admin1, user: user3, checkin: 3.days.from_now.to_date)
-Booking.create(admin: admin2, user: user4, checkin: 5.days.from_now.to_date)
-Booking.create(admin: admin1, user: user2, checkin: 10.days.from_now.to_date )
+Booking.create(admin: admin1, user: user3, checkin: -400.days.from_now.to_date)
+Booking.create(admin: admin2, user: user4, checkin: 20.days.from_now.to_date)
+Booking.create(admin: admin1, user: user2, checkin: 70.days.from_now.to_date )
