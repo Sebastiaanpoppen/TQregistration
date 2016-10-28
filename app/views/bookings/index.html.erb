@@ -1,32 +1,22 @@
-<div class="col-sm-1 col-md-1">
+<%= render 'admins/header' %>
+
+<div class="row-buttons">
+    <h2 class="page-title page-title-blue">Check in List</h2>
 </div>
 
-<div class=" col-sm-11 col-md-11 white-bg">
-  <div class="row-buttons admin-buttons">
-    <div class="image-logo-small logo-blue-bg logo-left">
-      <%= svg 'tq-diamond.svg' %>
-    </div>
-    <%= create_admin %>
-    <%= link_to "NEW BOOKING", "#", class: "btn btn-create", id: "new-booking" %>
-    <%= link_to "LOG OUT", destroy_admin_session_path, method: :delete, class: "btn btn-create" %>
-  </div>
-
-  <div class="row-buttons">
-  <h2 class="page-title page-title-blue">Check in List</h2>
-  </div>
-
-  <div class="booking-table">
+<div class="booking-table">
     <%= render 'table' %>
-    <p class="text-form">
-      <%= link_to "DOWNLOAD EXCEL SHEET", admin_bookings_path(@admin.id, format: "xls"), class: "btn btn-create" %>
-    </p>
     <br>
     <br>
 
-    <div> <h2 class="page-title page-title-blue"> Analyticts </h2></div>
-      <!-- check chartkick.com to see other possibilities of charts, graphics etc -->
+    <div>
+        <h2 class="page-title page-title-blue">
+            Analyticts
+        </h2>
+    </div>
+    <!-- check chartkick.com to see other possibilities of charts, graphics etc -->
 
     <%= line_chart Booking.group_by_day(:checkin, format: "%b %d, %Y", library: {yAxis: {allowDecimals: false}}).count %>
     <%= render 'new' %>
-  </div>
+</div>
 </div>
