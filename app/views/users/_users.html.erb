@@ -1,0 +1,10 @@
+<% @users.each_with_index do |user, i| %>
+  <tr>
+      <td><p><%= i %></p></td>
+      <td><p><%= user.full_name %><br/>
+                (Guest)</p></p></td>
+      <td><p><span class="label label-success"><%= last_checkin user %></span></p></td>
+      <td><p><%= user_company user %></p></td>
+      <td><p><%= user_email user %></p></td>
+  </tr>
+<% end %>

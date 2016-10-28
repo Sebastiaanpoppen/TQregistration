@@ -1,7 +1,22 @@
+<div class="col-sm-1 col-md-1">
+</div>
 
-<%= render 'table' %>
-<%= render 'bookings/new' %>
-<p>
-  Download:
-  <%= link_to "Excel", admin_users_path(@admin.id, format: "xls") %>
-</p>
+<div class=" col-sm-11 col-md-11 white-bg">
+  <div class="row-buttons admin-buttons">
+    <div class="image-logo-small logo-blue-bg logo-left">
+      <%= svg 'tq-diamond.svg' %>
+    </div>
+    <%= create_admin %>
+    <%= link_to "NEW BOOKING", "#", class: "btn btn-create", id: "new-booking" %>
+    <%= link_to "LOG OUT", destroy_admin_session_path, method: :delete, class: "btn btn-create" %>
+  </div>
+
+  <div class="row-buttons">
+  <h2 class="page-title page-title-blue">Guests List</h2>
+  </div>
+
+  <div class="booking-table">
+    <%= render 'table' %>
+    <br />
+  </div>
+</div>
