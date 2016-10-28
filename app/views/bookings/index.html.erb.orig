@@ -6,6 +6,7 @@
 
 <div class="booking-table">
     <%= render 'table' %>
+<<<<<<< HEAD
     <p class="text-form">
       <%= link_to "DOWNLOAD EXCEL SHEET", admin_bookings_path(@admin.id, format: "xls"), class: "btn btn-create" %>
     </p>
@@ -14,6 +15,8 @@
     </p>
 
 
+=======
+>>>>>>> master
     <br>
     <br>
 

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :admins, only: [:index] do
     resources :bookings
     resources :users, only: [:index]
+    get 'destroy_365days' => 'bookings#destroy_365days'
   end
 
   devise_for :admins, :controllers => { :registrations => 'admins'}
