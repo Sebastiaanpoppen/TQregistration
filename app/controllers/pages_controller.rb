@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_action :set_user, only: [:checkedin]
 
   def search_users
     @users = User.search(params[:search]) unless params[:search].blank?
@@ -16,13 +17,16 @@ class PagesController < ApplicationController
   end
 
   def checkedin
-    @user = User.find(params[:user_id])
-    if @user.bookings.where("checkin = ?", Date.today).first
-      #confirm the checking and
+    if !(booking = @user.bookings.where("checkin = ?", Date.today).first).blank?
+      booking.update({confirmed: true})
     else
-      @user.bookings.create({checkin: Date.today})
-      #and confirm it
+      @user.bookings.create({checkin: Date.today, confirmed: true})
     end
   end
 
+  private
+
+  def set_user
+    @user = User.find(params[:user_id])
+  end
 end

@@ -1,12 +1,21 @@
-<div class="content">
-  <h1>User information</h1>
+<div class="row">
+  <div class="col-sm-7 col-md-7 text-block-home">
+    <div class="image-logo-large logo-white-bg">
+      <%= svg 'tq-diamond.svg' %>
+    </div>
+    <h2 class="page-title">Your Information</h2>
+    <p class="text-regular text-welcome"> <%= "#{@user.full_name}" %> </p>
+    <p class="text-regular text-welcome"> <%= "#{@user.company}" %> </p>
+    <p class="text-regular text-welcome"> <%= "#{@user.email}" %> </p>
+    <br>
+    <br>
+    <p class="text-regular text-welcome"> Is that you? </p>
+    <br>
+    <br>
 
-  <p> <%= "#{@user.full_name}" %> </p>
-  <p> <%= "#{@user.company}" %> </p>
-  <p> <%= "#{@user.email}" %> </p>
-
-  <div class="actions">
-    <%= link_to "Oops it's not me", root_path, class: "btn btn-default" %>
-    <%= link_to "Check in", user_pages_checkedin_path(@user), class: "btn btn-default" %>
+    <div>
+      <%= link_to "OPS, IT'S NOT ME",search_users_path, class: "btn" %>
+      <%= link_to "YES, CHECK ME IN!", user_pages_checkedin_path(@user), class: "btn btn-default" %>
+    </div>
   </div>
 </div>

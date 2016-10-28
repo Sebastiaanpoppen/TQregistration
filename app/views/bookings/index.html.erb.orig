@@ -1,3 +1,28 @@
+<<<<<<< HEAD
+<div class="header">
+  <div class="image-logo">
+    <%= link_to "/admin", id: "adminlink" do %>
+    <%= svg 'tq-diamond.svg' %>
+    <% end %>
+  </div>
+  <%= link_to "Create Admin", new_admin_registration_path, class: "btn btn-primary create pull-right" %>
+  <%= link_to "New Booking", "#", class: "btn btn-primary create pull-right", id: "new-booking" %>
+  <%= link_to "Log Out", destroy_admin_session_path, method: :delete, class: "btn btn-primary create pull-right" %>
+</div>
+
+<%= render 'table' %>
+  <p>
+    Download:
+    <%= link_to "Excel", admin_bookings_path(@admin.id, format: "xls"), class: "btn btn-primary" %>
+  </p>
+<br>
+<br>
+
+
+
+<div class ="banner"> <h1> Analyticts </h1> </div>
+<!-- check chartkick.com to see other possibilities of charts, graphics etc -->
+=======
 <div class="col-sm-1 col-md-1">
 </div>
 
@@ -24,6 +49,7 @@
 
     <div class ="banner"> <h2 class="page-title page-title-blue"> Analyticts </h2></div>
       <!-- check chartkick.com to see other possibilities of charts, graphics etc -->
+>>>>>>> master
 
     <%= line_chart Booking.group_by_day(:checkin, format: "%b %d, %Y", library: {yAxis: {allowDecimals: false}}).count %>
     <%= render 'new' %>

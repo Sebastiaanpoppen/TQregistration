@@ -8,12 +8,16 @@
             <td><p class="text-form"><%= user_company booking.user %></p></td>
             <td><p class="text-form"><%= user_email booking.user %></p></td>
             <td class="col-md-2">
+<<<<<<< HEAD
               <p><%= check_box_tag :confirmed, admin(booking) , booking.confirmed, id: booking.id ,  class: "confirmed"  %></p>
+=======
+              <p class="text-form"></p>
+>>>>>>> master
             </td>
             <td class="col-md-2"><p>
                 <%= link_to admin_booking_path(@admin.id, booking.id), :method => 'delete', class: "btn-delete" do %>
                   <i class="glyphicon glyphicon-remove-circle"></i>
                <% end %>
-            </p></td>
+            </p class="text-form"></td>
         </tr>
 <% end %>
