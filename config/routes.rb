@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'admin', :to => redirect('/admins/sign_in')
 
-  resources :admins, only: [:index,:destroy] do
+  resources :admins, only: [:index] do
     resources :bookings
     resources :users, only: [:index]
   end
