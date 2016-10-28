@@ -1,7 +1,11 @@
+<%= render 'admins/header' %>
 
-<%= render 'table' %>
-<%= render 'bookings/new' %>
-<p>
-  Download:
-  <%= link_to "Excel", admin_users_path(@admin.id, format: "xls") %>
-</p>
+  <div class="row-buttons">
+  <h2 class="page-title page-title-blue">Guests List</h2>
+  </div>
+
+  <div class="booking-table">
+    <%= render 'table' %>
+    <br />
+  </div>
+</div>
