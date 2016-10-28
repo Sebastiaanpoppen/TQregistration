@@ -45,6 +45,8 @@
     border-radius: 50px;
     text-decoration: none;
     display: inline-block;
+    color: #0000EE;
+    font-family: 'gt-walsheim-regular';
     text-align: center;
     margin-left: 5px;
     cursor: pointer;
@@ -103,4 +105,9 @@ table tbody tr .btn-delete:hover{
   color: #9999F8;
   font-family: 'gt-walsheim-regular';
   font-size: 16px;
+}
+
+#bookings_paginate #bookings_next, #bookings_paginate #bookings_previous {
+  color: #0000EE;
+  font-family: 'gt-walsheim-regular';
 }

@@ -31,9 +31,6 @@
   z-index: 3000 !important;
 }
 
-.new-booking input{
-  color: #000;
-}
 .new-booking .row{
   display: flex;
   justify-content: center;
@@ -43,24 +40,32 @@
   padding: 0;
 }
 
+.box {
+  height: 700px !important;
+}
 
 .new-booking .box {
   width: 100%;
   background:#fff;
   transition:all 0.2s ease;
-  border:2px dashed #dadada;
+  border: 2px solid #0000EE;
   margin-top: 10%;
   box-sizing: border-box;
   border-radius: 5px;
   background-clip: padding-box;
   padding:0 20px 20px 20px;
   min-height:340px;
-  box-shadow: 2px 2px 15px rgba(163, 163, 163, 0.5);
+  box-shadow: none;
   z-index: inherit;
 }
 
+.btn-smaller {
+  transform: scale(0.8) !important;
+  margin: auto;
+}
+
 .new-booking .box:hover {
-  border:2px solid #525C7A;
+  border: 2px solid #0000EE;
 }
 .new-booking .box h1{
   color: black;
@@ -91,13 +96,6 @@
   color: #FFF;
   background-color: #cf1414;
 }
-
-.new-booking input{
-  padding: 10px;
-  border: 1px solid rgb(92, 92, 92);
-  border-radius: 8px;
-}
-
 
 .date-picker,
 .date-container {
@@ -137,6 +135,25 @@
 }
 .date-picker span.fa[data-method="add"] {
     right: 0px;
+}
+
+.date-text {
+  font-family: 'gt-walsheim-regular';
+  font-size: 20px;
+  color: #0000EE;
+}
+
+.fa-angle-left, .fa-angle-right {
+  color: #0000EE;
+  font-size: 20px;
+}
+
+.form-no-margin {
+  margin: 0px;
+}
+
+.page-title-no-margin {
+  margin-top: 0px !important;
 }
 
 
