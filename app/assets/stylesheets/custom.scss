@@ -60,6 +60,16 @@ body, html {
      /*max-height: 768px; /* CUSTOM ACCORDING TO IMAGE PROVIDED */
   }
 }
+
+.image-png {
+  padding-left: 0px;
+  img {
+    width: 100%;
+    height: auto;
+     /*max-height: 768px; /* CUSTOM ACCORDING TO IMAGE PROVIDED */
+  }
+}
+
 .notice, .alert{
   position: absolute;
   z-index: 1000;
@@ -377,7 +387,7 @@ input[type="submit"]:hover {
 /* Search page */
 
 .search-results {
-  height: 240px;
+  height: 238px;
 }
 
 .btn-search-results {
