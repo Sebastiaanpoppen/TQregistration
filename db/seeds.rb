@@ -10,14 +10,14 @@ User.delete_all
 Admin.delete_all
 # creating email for Admins
 emailSA = Faker::Internet.email
-emailA1 = Faker::Internet.email
-emailA2 = Faker::Internet.email
-
+emailA1 = "info@codaisseur.com"
+emailA2 = "team@tq.com"
+emailA3 = "giulio_wow@hotmail.it"
 # Creating Admins
 super_admin = Admin.create( {email: emailSA, password: "superadmin1234", super_admin: true} )
-admin1 = Admin.create( {email: emailA1, password: "admin1234"} )
-admin2 = Admin.create( {email: emailA2, password: "admin1234"} )
-
+admin1 = Admin.create( {email: emailA1, password: "codaisseur2016"} )
+admin2 = Admin.create( {email: emailA2, password: "tqregistration2016"} )
+admin3 = Admin.create( {email: emailA3, password: "giuliogallerini1993"} )
 # creating Users
 user1 = User.create({first_name: Faker::Name.name, last_name: Faker::Name.last_name, company: Faker::Company.name, email: Faker::Internet.email, newsletter: false})
 user2 = User.create({first_name: Faker::Name.name, last_name: Faker::Name.last_name, company: Faker::Company.name, email: Faker::Internet.email, newsletter: false})
@@ -27,9 +27,10 @@ user5 = User.create({first_name: Faker::Name.name, last_name: Faker::Name.last_n
 
 # create bookings
 
-Booking.create(admin: admin1, user: user2, checkin: -1.days.from_now.to_date )
+
 Booking.create(admin: admin2, user: user3, checkin: 2.days.from_now.to_date)
 Booking.create(admin: admin2, user: user1, checkin: Date.today)
-Booking.create(admin: admin2, user: user3, checkin: -2.days.from_now.to_date)
-Booking.create(admin: admin2, user: user4, checkin: -2.days.from_now.to_date)
-Booking.create(admin: admin2, user: user3, checkin: Date.today)
+Booking.create(admin: admin3, user: user3, checkin: Date.today)
+Booking.create(admin: admin1, user: user3, checkin: 3.days.from_now.to_date)
+Booking.create(admin: admin2, user: user4, checkin: 5.days.from_now.to_date)
+Booking.create(admin: admin1, user: user2, checkin: 10.days.from_now.to_date )
