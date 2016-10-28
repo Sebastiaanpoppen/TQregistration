@@ -54,8 +54,9 @@ body, html {
 .image-home {
   padding-left: 0px;
   img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    float: right;
+    height: 100%;
      /*max-height: 768px; /* CUSTOM ACCORDING TO IMAGE PROVIDED */
   }
 }
