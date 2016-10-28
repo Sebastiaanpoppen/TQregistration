@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
   get 'pages/home'
-
-  root to: 'pages#home'
   get 'pages/search_users'
   get '/search_users' => "pages#search_users"
 
