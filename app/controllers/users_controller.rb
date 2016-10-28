@@ -49,7 +49,6 @@ private
     params.require(:user).permit(:first_name, :last_name, :company, :email, :newsletter)
   end
 
-private
 def save_booking booking
   if booking.save
     redirect_to user_pages_checkedin_path(booking.user)

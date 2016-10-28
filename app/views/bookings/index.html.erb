@@ -4,9 +4,11 @@
     <%= svg 'tq-diamond.svg' %>
     <% end %>
   </div>
+  <%= link_to "Create Admin", new_admin_registration_path, class: "btn btn-primary create pull-right" %>
   <%= link_to "New Booking", "#", class: "btn btn-primary create pull-right", id: "new-booking" %>
   <%= link_to "Log Out", destroy_admin_session_path, method: :delete, class: "btn btn-primary create pull-right" %>
 </div>
+
 <%= render 'table' %>
   <p>
     Download:
@@ -14,6 +16,8 @@
   </p>
 <br>
 <br>
+
+
 
 <div class ="banner"> <h1> Analyticts </h1> </div>
 <!-- check chartkick.com to see other possibilities of charts, graphics etc -->

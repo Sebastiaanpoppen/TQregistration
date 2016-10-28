@@ -1,0 +1,28 @@
+
+  <%= form_for @admin,  html: { autocomplete: "off" } do |f| %>
+
+    <div class="form-full-name">
+      <div class="form-input">
+        <p class="text-form text-placeholder">Email *</p>
+        <%= f.text_field :email, class: "form-control" %>
+        <div class="error-message">
+          <%= @admin.errors[:email].join %>
+        </div>
+      </div>
+
+      <div class="form-input">
+        <p class="text-form text-placeholder">Password *</p>
+        <%= f.text_field :password, class: "form-control" %>
+        <div class="error-message">
+          <%= @admin.errors[:password].join %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-buttons">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true">
+          <%= link_to "Back", class: "btn-default" %></span>
+      </div>
+        <%= f.submit (@admin.new_record? ? "create" : "update"), class: "btn-create" %>
+          <% end %>
+    </div>
