@@ -46,6 +46,7 @@ body, html {
   height: 100%;
   font-family: 'gt-walsheim-regular';
   background-color: #0000EE;
+  line-height: 1.5;
 }
 
 /* HOME PAGE */
@@ -131,6 +132,7 @@ body, html {
   color: #0000EE;
   font-size: 17px;
   width: auto;
+  outline: none;
   height: 50px;
   padding: 12px 25px 10px 25px;
   margin: 0px 5px 0px 5px;
@@ -184,6 +186,10 @@ body, html {
   margin-top: 15px;
 }
 
+.page-title-smaller {
+  font-size: 25px;
+}
+
 .text-block-form {
   text-align: center;
   padding-right: 0px;
@@ -201,6 +207,7 @@ body, html {
 
 .text-italic {
   font-family: 'gt-walsheim-regular-oblique';
+  line-height: 1.5;
 }
 
 /* Form for new users */
@@ -221,8 +228,8 @@ html input[type="button"], input[type="reset"], input[type="submit"] {
   height: 60px;
   font-size: 16px;
   border-radius: 50px;
-  background-color: #9999F8;
-  border-color: #9999F8;
+  background-color: blue;
+  border-color: blue;
   color: white;
   padding: 10px 25px 10px 25px;
   margin: 0px 5px 0px 50px;
@@ -249,7 +256,7 @@ input[type="submit"]:hover {
   outline: 0px;
   border: 0px;
   border-bottom: 1px solid #9999F8;
-  box-shadow: none;
+  box-shadow: none !important;
   border-radius: 0px;
   padding: 0px 5px 0px 5px;
   font-size: 20px;
@@ -281,6 +288,8 @@ input[type="submit"]:hover {
 
 .glyphicon-search, .glyphicon-search:focus {
   color: #0000EE;
+  padding-top: 1px /* prevents it of being cropped */
+
 }
 
 #custom-search-input button, button:focus {
@@ -421,4 +430,11 @@ input[type="submit"]:hover {
 
 .text-table {
   color: #9999F8;
+}
+
+.btn-exit {
+  width: auto !important;
+  color: white !important;
+  background-color: blue !important;
+  border-color: blue !important;
 }

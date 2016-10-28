@@ -12,10 +12,13 @@
     <p class="text-regular text-welcome"> Is that you? </p>
     <br>
     <br>
-
     <div>
-      <%= link_to "OPS, IT'S NOT ME",search_users_path, class: "btn" %>
+      <%= link_to "OOPS, IT'S NOT ME",search_users_path, class: "btn" %>
       <%= link_to "YES, CHECK ME IN!", user_pages_checkedin_path(@user), class: "btn btn-default" %>
     </div>
   </div>
+  <div class="col-sm-5 col-md-5 image-home image-welcome">
+    <%= image_tag("blocks.png") %>
+  </div>
+
 </div>
