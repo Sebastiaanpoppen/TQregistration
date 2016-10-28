@@ -1,9 +1,11 @@
 
 class BookingsController < ApplicationController
+  load_and_authorize_resource
+  
   before_action :authenticate_admin!, only: [:index, :edit, :destroy, :update]
   before_action :set_admin, only: [:index, :edit, :destroy, :update]
   before_action :set_booking, only: [:update]
-   skip_before_action :verify_authenticity_token, only: [:update]
+  skip_before_action :verify_authenticity_token, only: [:update]
   # before_action :set_company, only: [:create]
 
   def index

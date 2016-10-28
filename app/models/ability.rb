@@ -1,15 +1,15 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  def initialize(admin)
 
-    user ||= User.new # guest user (not logged in)
-       if user.admin == true
+    admin ||= Admin.new # guest user (not logged in)
+       if admin.super_admin?
          can :manage, :all
        else
-         can :read, :all
+         can [:create, :new, :index, :destroy, :update], Booking
+         can [:index, :create, :update], User
        end
-     end
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

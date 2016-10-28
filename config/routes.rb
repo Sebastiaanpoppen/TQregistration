@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'pages/home'
 
-  root to: 'pages#home'
   get 'pages/search_users'
   get '/search_users' => "pages#search_users"
 
@@ -11,14 +10,13 @@ Rails.application.routes.draw do
     get 'show'
   end
 
-  get 'admin', :to => redirect('/admins/sign_in')
+  devise_for :admins, :controllers => { :registrations => 'admins'}
 
-  resources :admins, only: [:index] do
+  resources :admins do
     resources :bookings
     resources :users, only: [:index]
+    get 'manage_admins' 
   end
-
-  devise_for :admins, :controllers => { :registrations => 'admins'}
 
   get 'admin', :to => redirect('/admins/sign_in')
 
