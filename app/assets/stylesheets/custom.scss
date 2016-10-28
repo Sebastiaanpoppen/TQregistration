@@ -46,7 +46,6 @@ body, html {
   height: 100%;
   font-family: 'gt-walsheim-regular';
   background-color: #0000EE;
-  line-height: 1.5;
 }
 
 /* HOME PAGE */
@@ -146,9 +145,10 @@ body, html {
   outline: none;
   height: 50px;
   padding: 12px 25px 10px 25px;
-  margin: 0px 5px 0px 5px;
+  margin: 5px;
   font-family: 'gt-walsheim-bold';
   letter-spacing: 1px;
+
 }
 
 /* IMAGE LOGO */
@@ -218,7 +218,6 @@ body, html {
 
 .text-italic {
   font-family: 'gt-walsheim-regular-oblique';
-  line-height: 1.5;
 }
 
 /* Form for new users */
@@ -388,10 +387,6 @@ input[type="submit"]:hover {
 
 .search-results {
   height: 238px;
-}
-
-.btn-search-results {
-  margin: 5px;
 }
 
 /* LOGIN ADMIN */
