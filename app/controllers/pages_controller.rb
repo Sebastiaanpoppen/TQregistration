@@ -34,7 +34,7 @@ class PagesController < ApplicationController
 
   def send_email booking
     if !booking.admin.blank? && booking.confirmed
-      email = Mailer.new('tqrecautomatic@gmail.com', booking.admin.email, "Guest Arrived")
+      email = Mailer.new(booking.admin.email, "Guest Arrived")
       email.send_email "#{booking.user.full_name} just checked in at the reception."
     end
   end

@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   before_action :authenticate_admin!, only: [:index, :edit, :destroy, :update]
   before_action :set_admin, only: [:index, :edit, :destroy, :update]
   before_action :set_booking, only: [:update]
-   skip_before_action :verify_authenticity_token, only: [:update]
+  skip_before_action :verify_authenticity_token, only: [:update]
   # before_action :set_company, only: [:create]
 
   def index
@@ -94,7 +94,7 @@ class BookingsController < ApplicationController
 
   def send_email
     if !@admin.email.blank? && @booking.confirmed
-      email = Mailer.new('tqrecautomatic@gmail.com', @admin.email, "Guest Arrived")
+      email = Mailer.new(@admin.email, "Guest Arrived")
       email.send_email "#{@booking.user.full_name} just checked in at the reception."
     end
   end

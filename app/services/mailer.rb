@@ -2,11 +2,18 @@ require 'mail'
 
 class Mailer
 
-  def initialize from, to, subject
-    @@from = from
+  def initialize to, subject
+    @@from = ENV["EMAIL_USERNAME"]
     @@to = to
     @@subject = subject
-    smtp = { :address => 'smtp.gmail.com', :port => 587, :domain => 'gmail.com', :user_name => 'tqrecautomatic@gmail.com', :password => 'T@r3g1str@t10n2016!*', :enable_starttls_auto => true, :openssl_verify_mode => 'none' }
+    smtp = {
+      :address => 'smtp.gmail.com',
+      :port => 587, :domain => 'gmail.com',
+      :user_name => ENV["EMAIL_USERNAME"],
+      :password => ENV["EMAIL_PASSWORD"],
+      :enable_starttls_auto => true,
+      :openssl_verify_mode => 'none'
+    }
     Mail.defaults { delivery_method :smtp, smtp }
   end
 
