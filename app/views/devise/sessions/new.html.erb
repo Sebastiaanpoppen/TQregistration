@@ -1,63 +1,65 @@
 <div class="row">
   <div class="col-sm-7 col-md-7 text-block-form">
+
+    <!-- blue bar on the left -->
     <div class="col-sm-1 col-md-1">
     </div>
+    <!-- blue bar on the left -->
+
     <div class="col-sm-11 col-md-11 content-form">
       <div class="image-logo-small logo-blue-bg">
         <%= svg 'tq-diamond.svg' %>
       </div>
       <br>
+      <h2 class="page-title page-title-blue">Log In</h2>
 
-      <h2 class="page-title page-title-blue">Log In<h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <% if devise_error_messages! != "" %>
+      <h3 class="text-center">
+          <%= devise_error_messages! %>
+      </h3>
+    </div>
+    <% end %>
 
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <% if devise_error_messages! != "" %>
-              <h3 class="text-center">
-                  <%= devise_error_messages! %>
-              </h3>
-          </div>
-        </div>
-            <% end %>
+    <div class="form-input">
+      <p class="text-form text-placeholder">Email *</p>
+        <%= f.email_field :email, :class => 'form-control', autocomplete: "off" %>
+    </div>
 
-        <div class="form-input">
-          <p class="text-form text-placeholder">Email *</p>
-            <%= f.email_field :email, :class => 'form-control', autocomplete: "off" %>
-        </div>
+    <div class="form-input">
+      <p class="text-form text-placeholder">Password *</p>
+        <%= f.password_field :password, :class => 'form-control',  autocomplete: "off" %>
+    </div>
 
-        <div class="form-input">
-          <p class="text-form text-placeholder">Password *</p>
-            <%= f.password_field :password, :class => 'form-control',  autocomplete: "off" %>
-        </div>
+    <% if devise_mapping.rememberable? %>
+    <div class="form-group">
+      <label class="form-checkbox">
+        <%= f.check_box :remember_me %>
+        <p class="text-form text-color">&nbsp Remember me</p>
+      <label>
+    </div>
+    <% end %>
+    <br>
+    <br>
 
-        <% if devise_mapping.rememberable? %>
-          <div class="form-group">
-            <label class="form-checkbox">
-              <%= f.check_box :remember_me %>
-              <p class="text-form text-color">&nbsp Remember me</p>
-            <label>
-          </div>
-        <% end %>
-        <br>
-        <br>
-        <div class="row-buttons">
-            <!-- Button -->
-            <div class="col-sm-12 controls">
-                <button type="submit" href="#" class="btn btn-create">LOG IN</button>
-                    <%= link_to "FORGOT PASSWORD", new_admin_password_path, :class => "btn btn-create" %>
-            </div>
-        </div>
-        <% end %>
-        <br>
-        <br>
-
-      <div class="btn-back">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <%= link_to "Oh wait.. I'm not an admin", root_path, class: "btn-back text-form" %>
+    <!-- Buttons -->
+    <div class="row-buttons">
+      <div class="col-sm-12 controls">
+        <button type="submit" href="#" class="btn btn-create">LOG IN</button>
+        <%= link_to "FORGOT PASSWORD", new_admin_password_path, :class => "btn btn-create" %>
       </div>
     </div>
-  </div>
-  <div class="col-sm-5 col-md-5 image-home image-welcome">
-    <%= image_tag("blocks.png") %>
-  </div>
+    <% end %>
+    <br>
+    <br>
 
+    <div class="btn-back">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <%= link_to "Oh wait.. I'm not an admin", root_path, class: "btn-back text-form" %>
+    </div>
+  </div>
+</div>
+<div class="col-sm-5 col-md-5 image-home image-welcome">
+  <%= image_tag("http://res.cloudinary.com/dq7saz15g/image/upload/v1477645929/blocks_efs2bt.png") %>
+  <!-- blocks.png -->
 </div>

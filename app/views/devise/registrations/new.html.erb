@@ -1,49 +1,58 @@
-<div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
-    <div class="access panel panel-default">
-        <div class="panel-heading">
-            <div class="panel-title text-center">Mentor.com</div>
-        </div>
+<div class="row">
+  <div class="col-sm-7 col-md-7 text-block-form">
 
-        <div class="panel-body">
+    <!-- blue bar on the left -->
+    <div class="col-sm-1 col-md-1">
+    </div>
+    <!-- blue bar on the left -->
 
-            <%= form_for(resource, as: resource_name, url: admin_registration_path(resource_name)) do |f| %>
-            <% if devise_error_messages! != "" %>
-            <div class="panel-danger">
-              <div class="panel-heading">
-                  <h3 class="text-center">
-                      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                      <%= devise_error_messages! %>
-                  </h3>
-              </div>
-            </div>
-            <% end %>
+    <div class="col-sm-11 col-md-11 content-form">
+      <div class="image-logo-small logo-blue-bg">
+        <%= svg 'tq-diamond.svg' %>
+      </div>
+      <br>
+      <h2 class="page-title page-title-blue">Create New Admin</h2>
 
-        <div class="input-group">
-            <span class="input-group-addon">
-                <i class="glyphicon glyphicon-user"></i>
-            </span>
-            <%= f.email_field :email, :class => 'form-control', :placeholder => 'Email' %>
-        </div>
 
-        <div class="input-group">
-            <span class="input-group-addon">
-                <i class="glyphicon glyphicon-lock"></i>
-            </span>
+        <%= form_for(resource, as: resource_name, url: admin_registration_path(resource_name)) do |f| %>
+        <% if devise_error_messages! != "" %>
+        <h3 class="text-center">
+          <%= devise_error_messages! %>
+        </h3>
+      </div>
+    <% end %>
 
-            <%= f.password_field :password, :class => 'form-control', :placeholder => 'Password',  autocomplete: "off" %>
-        </div>
+    <div class="form-input">
+      <p class="text-form text-placeholder">Email *</p>
+      <%= f.email_field :email, :class => 'form-control' %>
+    </div>
 
-        <div class="form-group">
-            <!-- Button -->
-            <div class="col-sm-12 controls">
-                <button type="submit" href="#" class="btn btn-default pull-right">
-                    <i class="glyphicon glyphicon-log-in"></i>
-                    Sign up</button>
-            </div>
-        </div>
+    <div class="form-input">
+      <p class="text-form text-placeholder">Password *</p>
+      <%= f.password_field :password, :class => 'form-control',  autocomplete: "off" %>
+    </div>
 
-        <% end %>
+    <!-- Button -->
+    <div class="row-buttons">
+      <div class="col-sm-12 controls">
+        <button type="submit" href="#" class="btn btn-create">SIGN UP</button>
+      </div>
+    </div>
+    <% end %>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
+    <div class="btn-back">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <%= link_to "Oh wait.. I want to go back", admin_path, class: "btn-back text-form" %>
     </div>
   </div>
+</div>
+<div class="col-sm-5 col-md-5 image-home image-welcome">
+  <%= image_tag("http://res.cloudinary.com/dq7saz15g/image/upload/v1477645929/blocks_efs2bt.png") %>
+  <!-- blocks.png -->
 </div>
