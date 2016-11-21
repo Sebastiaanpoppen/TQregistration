@@ -11,13 +11,19 @@ Rails.application.routes.draw do
 
   get 'admin', :to => redirect('/admins/sign_in')
 
+
   resources :admins, only: [:index] do
     resources :bookings
     resources :users, only: [:index]
     get 'destroy_365days' => 'bookings#destroy_365days'
+      devise_scope :admin do
+        get '/superadmin', to: "admins#super_admin"
+      end
   end
 
   devise_for :admins, :controllers => { :registrations => 'admins'}
+
+
 
   get 'admin', :to => redirect('/admins/sign_in')
 

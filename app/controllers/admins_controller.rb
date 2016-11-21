@@ -2,6 +2,10 @@ class AdminsController < Devise::RegistrationsController
   before_filter :authorize_admin, only: [:create, :destroy]
   skip_before_action :require_no_authentication, only: :new
 
+
+  def super_admin
+  end
+
   def create
     if Admin.create(admin_params)
       redirect_to "/admin", notice: "New admin succesfully created"
