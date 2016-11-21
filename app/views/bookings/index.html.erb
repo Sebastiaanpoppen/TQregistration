@@ -25,9 +25,9 @@
 
     </div>
     <!-- check chartkick.com to see other possibilities of charts, graphics etc -->
-    <%= line_chart Booking.group_by_day(:checkin, format: "%b %d, %Y", library: {yAxis: {allowDecimals: false}}).count %>
-    <%= line_chart Booking.group_by_month(:checkin, format: "%b", library: {yAxis: {allowDecimals: false}}).count %>
-    <%= line_chart Booking.group_by_year(:checkin, format: "%Y", library: {yAxis: {allowDecimals: false}}).count %>
+    <%= line_chart chart_data @admin, 'day' %>
+    <%= line_chart chart_data @admin, 'month' %>
+    <%= line_chart chart_data @admin, 'year' %>
     <%= render 'new' %>
     <br>
     <br>
