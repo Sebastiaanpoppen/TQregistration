@@ -6,7 +6,8 @@
     <div class="image-logo-small logo-blue-bg logo-left">
       <%= svg 'tq-diamond.svg' %>
     </div>
-    <%= super_admin %>
-    <%= link_to "NEW BOOKING", "#", class: "btn btn-create", id: "new-booking" %>
+
+
+    <%= create_admin %>
     <%= link_to "LOG OUT", destroy_admin_session_path, method: :delete, class: "btn btn-create" %>
   </div>
