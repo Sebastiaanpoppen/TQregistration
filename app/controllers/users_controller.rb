@@ -28,7 +28,6 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if !@user.id.blank?
-      debugger
       booking = @user.bookings.build({checkin: Date.today})
       save_booking booking
     else

@@ -1,23 +1,20 @@
-<div class="row">
-  <div class="col-sm-7 col-md-7 text-block-home">
-    <div class="image-logo-large logo-white-bg">
+<div class="main">
+  <div class="main-content-left">
+    <div class="main-logo-large main-logo-white-bg">
       <%= link_to "/admin", id: "adminlink" do %>
       <%= svg 'tq-diamond.svg' %>
     </div>
     <% end %>
 
-    <br>
-
-      <h2 class="page-title">Welcome to TQ!</h2>
-      <br>
+    <div class="text-center">
+      <h1>Welcome to TQ!</h1>
       <p class="text-regular">TQ is a curated tech space at the heart of Amsterdam founded by The Next Web. We help tech startups reach exponential growth, by providing them with the right talent, tools & training.</p>
-      <br>
-      <div class="buttons">
-      <%= link_to "IT'S MY FIRST TIME", new_user_path, class: "btn" %>
-      <%= link_to "I'VE BEEN HERE BEFORE", search_users_path, class: "btn" %>
-      </div>
+      <%= link_to "It's my first time", new_user_path, class: "button button--inverted" %>
+      <%= link_to "I've been here before", search_users_path, class: "button button--inverted" %>
+    </div>
   </div>
-  <div class="col-sm-5 col-md-5 image-home">
+
+  <div class="main-content-right image-panel">
     <%= image_tag("http://res.cloudinary.com/dq7saz15g/image/upload/v1477645930/01-home_s9syc9.jpg") %>
     <!--01-home.jpg -->
   </div>
