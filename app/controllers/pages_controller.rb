@@ -1,4 +1,10 @@
 class PagesController < ApplicationController
+  load_and_authorize_resource :class => ApplicationController
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to new_admin_session_path, :alert => exception.message
+  end
+
   before_action :set_user, only: [:checkedin]
 
   def search_users

@@ -3,8 +3,7 @@ class Ability
 
   def initialize(admin)
 
-    admin ||= Admin.new # guest user (not logged in)
-       if admin.super_admin?
+       if !admin.nil? && admin.super_admin?
          can :manage, :all
        else
          can [:create, :new, :index, :destroy, :update], Booking
