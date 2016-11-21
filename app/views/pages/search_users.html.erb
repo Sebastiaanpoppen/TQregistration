@@ -23,10 +23,23 @@
       </div>
       <br>
 
+  <nav>
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field" action="<%= search_artist_path %>">>
+          <input id="search" type="text" required>
+          <label for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+
+
       <div class="search-results">
-        <% if !@users.nil? %>
-          <% @users.each do |user| %>
-            <%= link_to user.full_name, user_path(user.id), class: "btn btn-glyphicon" %>
+        <% if !@artist.nil? %>
+          <% @artist.each do |artist| %>
+            <%= link_to artist.name, artist(artist.id) %>
           <% end %>
         <% end %>
       </div>
