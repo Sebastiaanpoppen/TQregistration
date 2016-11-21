@@ -1,22 +1,19 @@
-<div class="row">
-  <div class="col-sm-7 col-md-7 text-block-home">
-    <div class="main-image-logo-large logo-white-bg">
+<div class="main">
+  <div class="main-content-left">
+    <div class="main-logo-large main-logo-white-bg">
       <%= svg 'tq-diamond.svg' %>
     </div>
 
-    <h2 class="page-title welcome-title"> Welcome, <br><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %>! </h2>
-    <br>
-    <p class="text-regular text-welcome">You have been successfully checked in. We hope your host serves coffee ;-)</p>
-    <br>
-    <br>
-    <div>
-      <%= link_to "DONE", root_path, class: "btn btn-done" %>
+    <div class="text-center">
+      <h1>Welcome, <br><%= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}" %>!</h1>
+      <p class="text-regular">You have been successfully checked in.<br> We hope your host serves coffee ;-)</p>
+      <%= link_to "Done", root_path, class: "button button--inverted" %>
     </div>
   </div>
 
-  <div class="col-sm-5 col-md-5 image-home image-welcome">
+  <div class="main-content-right image-panel image-welcome">
     <%= image_tag("http://res.cloudinary.com/dq7saz15g/image/upload/v1477645929/blocks_efs2bt.png") %>
-    <!-- blocks.png -->
+    <!--01-home.jpg -->
   </div>
 </div>
 

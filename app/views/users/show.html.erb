@@ -1,25 +1,24 @@
-<div class="row">
-  <div class="col-sm-7 col-md-7 text-block-home">
-    <div class="main-image-logo-large logo-white-bg">
+<div class="main">
+  <div class="main-content-left">
+    <div class="main-logo-large main-logo-white-bg">
       <%= svg 'tq-diamond.svg' %>
     </div>
-    <h2 class="page-title">Your Information</h2>
-    <p class="text-regular text-welcome"> <%= "#{@user.full_name}" %> </p>
-    <p class="text-regular text-welcome"> <%= "#{@user.company}" %> </p>
-    <p class="text-regular text-welcome"> <%= "#{@user.email}" %> </p>
-    <br>
-    <br>
-    <p class="text-regular text-welcome"> Is that you? </p>
-    <br>
-    <br>
-    <div>
-      <%= link_to "OOPS, IT'S NOT ME",search_users_path, class: "btn" %>
-      <%= link_to "YES, CHECK ME IN!", user_pages_checkedin_path(@user), class: "btn btn-default" %>
+
+    <div class="text-center">
+      <h1>Your Information</h1>
+      <p class="text-regular text-welcome"> <%= "#{@user.full_name}" %><br>
+      <%= "#{@user.company}" %><br>
+      <%= "#{@user.email}" %><br>
+      <br>
+      Is that you? </p>
+
+      <%= link_to "OOPS, IT'S NOT ME",search_users_path, class: "button button--inverted" %>
+      <%= link_to "YES, CHECK ME IN!", user_pages_checkedin_path(@user), class: "button button--inverted" %>
     </div>
   </div>
-  <div class="col-sm-5 col-md-5 image-home image-welcome">
-    <%= image_tag("http://res.cloudinary.com/dq7saz15g/image/upload/v1477645929/blocks_efs2bt.png") %>
-    <!-- blocks.png -->
-  </div>
 
+  <div class="main-content-right image-panel image-welcome">
+    <%= image_tag("http://res.cloudinary.com/dq7saz15g/image/upload/v1477645929/blocks_efs2bt.png") %>
+    <!--01-home.jpg -->
+  </div>
 </div>
