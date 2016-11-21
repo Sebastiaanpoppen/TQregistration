@@ -12,7 +12,7 @@ In the following sessions we are gonna describe the features that you can use wi
 
 <img src="http://i.imgur.com/wta1slb.png" width=600px />
 
-In this page, the user that have never been in the building before, can register as a visitor.
+In this page, the users that have never been in the building before, can register as visitors.
 When the registration is submitted, the system automatically creates and confirm a booking for that user.
 Users errors are taken into account by using validations for each field.
 
@@ -42,12 +42,31 @@ Another feature for the admin is the possibility to create new bookings, in adva
 
 The last but not least feature that we want to talk about is the automatic confirmation email that is sent when a booking has been confirmed. It will be sent to the admin that created that specific booking in the moment when the visitor checks in.
 
+## PROGRAMMING LANGUAGES USED
+
+1. Ruby on Rails
+2. jQuery
+3. AJAX
+4. HTML5 and SCSS
+
+## GEMS USED
+
+* [Devise](https://rubygems.org/gems/devise) - Authentication manager
+* [Bootstrap](https://rubygems.org/gems/bootstrap) - Styling
+* [CanCanCan](https://rubygems.org/gems/cancancan) - Authorization manager
+* [Chartkick](https://rubygems.org/gems/chartkick) - Charts
+* [Carrierwave](https://rubygems.org/gems/carrierwave) - Image uploader
+* [Cloudinary](https://rubygems.org/gems/cloudinary) - Image host platform
+* [RSPEC](https://rubygems.org/gems/rspec), [Capybara](https://rubygems.org/gems/capybara) and [Factory Girl](https://rubygems.org/gems/factory_girl) - Testing
+* [Group Date](https://rubygems.org/gems/groupdate) - Simple way to group by: day, month, year
+* [Faker](https://rubygems.org/gems/faker) - Generate fake data for development purposes
+
 ## COLLABORATORS
 
-[Sebastiaan Poppen](https://github.com/Sebastiaanpoppen)
-[Giulio Gallerini](https://github.com/giuliogallerini)
-[Adriana Matsufuji](https://github.com/adrianabm)
-[Jan Luth](https://github.com/Ermelo1983)
+* [Sebastiaan Poppen](https://github.com/Sebastiaanpoppen)
+* [Giulio Gallerini](https://github.com/giuliogallerini)
+* [Adriana Matsufuji](https://github.com/adrianabm)
+* [Jan Luth](https://github.com/Ermelo1983)
 
 
 © Copyright Codaisseur 2016 <strong>Team JAGS</strong>
