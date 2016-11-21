@@ -13,11 +13,8 @@
       <% @admins.each do |admin| %>
       <tr>
         <td><%= admin.email %> </td>
-        <td><%= link_to admin_destroy_path(admin.id), :method => 'delete', class: "btn-delete" do %>
-            <i class="glyphicon glyphicon-remove-circle"></i></td>
-        <% end %>
-        <td> </td>
-
+        <td><%= check_box_tag :active, admin, admin.active, id: admin.id ,  class: "confirmed"  %></td>
+        <td></td>
   </td>
       </tr>
         <% end %>

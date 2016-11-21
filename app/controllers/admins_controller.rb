@@ -26,12 +26,9 @@ class AdminsController < Devise::RegistrationsController
     end
   end
 
-  def destroy
-    @admin = Admin.find(params[:admin_id])
-    if !@admin.nil? && @admin.destroy
-      redirect_to "/admin", notice: "admin succesfully deleted"
-    else
-      redirect_to "/admin" , alert: "There was an error deleting the admin"
+  def update
+    checked = params[:checked]
+    if @admin.update({active: false})
     end
   end
 
