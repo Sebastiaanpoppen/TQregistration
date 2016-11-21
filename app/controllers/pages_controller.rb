@@ -30,7 +30,7 @@ class PagesController < ApplicationController
       booking.update({confirmed: true})
       send_email booking
     else
-      @user.bookings.create({checkin: Date.today, confirmed: true})
+      booking = @user.bookings.create({checkin: Date.today, confirmed: true})
       send_email booking
     end
   end

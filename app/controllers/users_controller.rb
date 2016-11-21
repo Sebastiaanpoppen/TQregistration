@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  load_and_authorize_resource 
+  load_and_authorize_resource
   before_action :set_admin, only: [:index]
 
   def index
@@ -28,6 +28,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if !@user.id.blank?
+      debugger
       booking = @user.bookings.build({checkin: Date.today})
       save_booking booking
     else

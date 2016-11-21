@@ -8,7 +8,7 @@ class Ability
        elsif !admin.nil?
          can :pages, [:home, :checkin, :search_users]
          can [:create, :new, :index, :destroy, :update], Booking
-         can [:index, :create, :update], User
+         can [:index, :create, :update, :show], User
        end
     #
     # The first argument to `can` is the action you are giving the user
