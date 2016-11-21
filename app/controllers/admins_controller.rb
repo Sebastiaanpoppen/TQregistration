@@ -1,5 +1,10 @@
 class AdminsController < Devise::RegistrationsController
   load_and_authorize_resource
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to admin_bookings_path, :alert => exception.message
+  end
+
   before_filter :authorize_admin, only: [:create, :destroy, :manage_admins]
   skip_before_action :require_no_authentication, only: :new
 

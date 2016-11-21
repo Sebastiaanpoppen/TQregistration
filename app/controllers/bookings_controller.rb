@@ -10,7 +10,9 @@ class BookingsController < ApplicationController
 
   def index
     if @admin
-      @bookings = Booking.all.order_by_checkin(:desc)
+      (!@admin.full_access.blank? && @admin.full_access) || @admin.super_admin ?
+        @bookings = Booking.all.order_by_checkin(:desc) : @bookings = @admin.bookings.order_by_checkin(:desc)
+
       respond_to do |format|
         format.html
         format.csv { send_data @bookings.to_csv }
