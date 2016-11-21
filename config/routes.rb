@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     get 'destroy_365days' => 'bookings#destroy_365days'
       devise_scope :admin do
         get '/superadmin', to: "admins#super_admin"
+        delete '/destroy', to: "admins#destroy"
+
       end
   end
 

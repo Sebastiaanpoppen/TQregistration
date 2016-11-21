@@ -10,6 +10,7 @@ class AdminsController < Devise::RegistrationsController
 
 
   def super_admin
+    @admins = Admin.all
   end
 
   def create
@@ -17,6 +18,15 @@ class AdminsController < Devise::RegistrationsController
       redirect_to "/admin", notice: "New admin succesfully created"
     else
       redirect_to "/admin" , alert: "There was an error creating the new admin"
+    end
+  end
+
+  def destroy
+    @admin = Admin.find(params[:admin_id])
+    if !@admin.nil? && @admin.destroy
+      redirect_to "/admin", notice: "admin succesfully deleted"
+    else
+      redirect_to "/admin" , alert: "There was an error deleting the admin"
     end
   end
 

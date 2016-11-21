@@ -1,1 +1,25 @@
 <%= render 'admins/super_admin_header' %>
+
+<table class="table table-bordered table-striped">
+  <thead>
+      <tr>
+          <th class="text-left"><%= "Email:" %></th>
+          <th class="text-left"><%= "Active" %></th>
+          <th class="text-left"><%= "full access" %></th>
+
+        </tr>
+    </thead>
+    <tbody>
+      <% @admins.each do |admin| %>
+      <tr>
+        <td><%= admin.email %> </td>
+        <td><%= link_to admin_destroy_path(admin.id), :method => 'delete', class: "btn-delete" do %>
+            <i class="glyphicon glyphicon-remove-circle"></i></td>
+        <% end %>
+        <td> </td>
+
+  </td>
+      </tr>
+        <% end %>
+    </tbody>
+</table>
