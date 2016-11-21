@@ -1,23 +1,21 @@
-<div class="row">
-  <div class="main">
-    <div class="main-content-left">
-      <div class="main-logo-large main-logo-white-bg">
-        <%= link_to "/admin", id: "adminlink" do %>
-        <%= svg 'tq-diamond.svg' %>
-      </div>
-      <% end %>
-
-      <div class="text-center">
-        <h1>Welcome to TQ!</h1>
-        <p class="text-regular">TQ is a curated tech space at the heart of Amsterdam founded by The Next Web. We help tech startups reach exponential growth, by providing them with the right talent, tools & training.</p>
-        <%= link_to "It's my first time", new_user_path, class: "button button--inverted" %>
-        <%= link_to "I've been here before", search_users_path, class: "button button--inverted" %>
-      </div>
+<div class="main">
+  <div class="main-content-left">
+    <div class="main-logo-large main-logo-white-bg">
+      <%= link_to "/admin", id: "adminlink" do %>
+      <%= svg 'tq-diamond.svg' %>
     </div>
+    <% end %>
 
-    <div class="main-content-right image-panel">
-      <%= image_tag("http://res.cloudinary.com/dq7saz15g/image/upload/v1477645930/01-home_s9syc9.jpg") %>
-      <!--01-home.jpg -->
+    <div class="text-center">
+      <h1>Welcome to TQ!</h1>
+      <p class="text-regular">TQ is a curated tech space at the heart of Amsterdam founded by The Next Web. We help tech startups reach exponential growth, by providing them with the right talent, tools & training.</p>
+      <%= link_to "It's my first time", new_user_path, class: "button button--inverted" %>
+      <%= link_to "I've been here before", search_users_path, class: "button button--inverted" %>
     </div>
+  </div>
+
+  <div class="main-content-right image-panel">
+    <%= image_tag("http://res.cloudinary.com/dq7saz15g/image/upload/v1477645930/01-home_s9syc9.jpg") %>
+    <!--01-home.jpg -->
   </div>
 </div>

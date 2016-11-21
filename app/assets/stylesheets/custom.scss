@@ -71,7 +71,7 @@ body, html {
     position: relative;
     text-align: center;
     text-decoration: none;
-    text-transform: uppercase
+    text-transform: uppercase;
 }
 
 
@@ -81,7 +81,17 @@ body, html {
 .button--inverted:focus,
 .button--inverted:active:hover {
   background: #DB9;
-  color: blue
+  color: blue;
+}
+
+.image-panel {
+  padding-left: 0px;
+  img {
+    width: auto;
+    float: right;
+    height: 100%;
+     /*max-height: 768px; /* CUSTOM ACCORDING TO IMAGE PROVIDED */
+  }
 }
 
 .main {
@@ -119,96 +129,6 @@ body, html {
   z-index: 1000;
 }
 
-
-.text-center {
-  text-align: center;
-}
-
-.image-panel {
-  padding-left: 0px;
-  img {
-    width: auto;
-    float: right;
-    height: 100%;
-     /*max-height: 768px; /* CUSTOM ACCORDING TO IMAGE PROVIDED */
-  }
-}
-
-.image-png {
-  padding-left: 0px;
-  img {
-    width: 100%;
-    height: auto;
-     /*max-height: 768px; /* CUSTOM ACCORDING TO IMAGE PROVIDED */
-  }
-}
-
-.notice, .alert{
-  position: absolute;
-  z-index: 1000;
-  font-size: 16px;
-  width: auto;
-  max-width: 300px;
-  margin-left: 30%;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  h3{
-    margin: 0;
-  }
-}
-.image-form {
-  padding: 0px;
-  background-color: #eaeaea;
-
-  img {
-    margin-top: 15px;
-    margin-left: 15px;
-  }
-}
-
-.image-welcome {
-  padding: 0px;
-
-  img {
-    margin-top: 15px;
-    padding-top: 150px;
-  }
-}
-
-
-
-.text-block-home {
-  text-align: center;
-  padding-top: 100px;
-  padding-left: 0px;
-  padding-right: 0px;
-
-}
-
-//
-// .btn,
-// .btn:active,
-// .btn:hover,
-// .btn:focus,
-// .btn:active:hover {
-//   border-radius: 50px;
-//   background-color: #DDBB88;
-//   color: #0000EE;
-//   font-size: 17px;
-//   width: auto;
-//   outline: none;
-//   height: 50px;
-//   padding: 12px 25px 10px 25px;
-//   margin: 5px 5px 5px 5px;
-//   font-family: 'gt-walsheim-bold';
-//   letter-spacing: 1px;
-// }
-
-/* IMAGE LOGO */
-
 .main-logo-small {
   width: 70px;
   height: 70px;
@@ -239,6 +159,53 @@ body, html {
   .st2{fill:#FFFFFF}
 }
 
+.notice, .alert{
+  position: absolute;
+  z-index: 1000;
+  font-size: 16px;
+  width: auto;
+  max-width: 300px;
+  margin-left: 30%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  h3{
+    margin: 0;
+  }
+}
+
+.page-title-blue {
+  color: #0000EE;
+  height: 40px;
+  margin-top: 15px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.image-form {
+  padding: 0px;
+  background-color: #eaeaea;
+
+  img {
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+}
+
+.image-welcome {
+  padding: 0px;
+
+  img {
+    margin-top: 15px;
+    padding-top: 150px;
+  }
+}
+
 
 /* REGISTER PAGE */
 
@@ -246,11 +213,6 @@ body, html {
   background-color: white;
   height: 2000px;
   padding: 40px 40px 20px 40px;
-}
-
-.page-title-blue {
-  color: #0000EE;
-  margin-top: 15px;
 }
 
 .page-title-smaller {
@@ -279,8 +241,19 @@ body, html {
 
 /* Form for new users */
 
-.form-checkbox {
-  display: inline-flex;
+.form-option {
+  display: block;
+  line-height: 1.25;
+  padding-left: 28px;
+  position: relative;
+}
+
+.form-option-input {
+  background-color: rgba(0,0,255,0.1);
+  position: absolute;
+  height: 16px;
+  left: 0;
+  width: 16px;
 }
 
 .text-color {

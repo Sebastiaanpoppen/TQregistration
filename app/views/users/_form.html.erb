@@ -37,8 +37,8 @@
       <p class="text-form text-bold">Would you like to become a free community member of TQ?</p>
       <p class="text-form text-italic">As a community member you will have access to our cafe and we will keep you updated on all things TQ!</p>
 
-      <label class="form-checkbox">
-        <%= f.check_box :newsletter %>
+      <label class="form-option">
+        <%= f.check_box :newsletter, class: "form-option-input" %>
         <p class="text-form text-color">&nbsp I would like to become a member.</p>
       </label>
     </div>
@@ -48,7 +48,7 @@
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <%= link_to "Oh wait.. I've done this before", search_users_path, class: "btn-back text-form" %>
       </div>
-        <%= f.submit (@user.new_record? ? "CHECK IN" : "UPDATE"), class: "btn-create" %>
+        <%= f.submit (@user.new_record? ? "CHECK IN" : "UPDATE"), class: "button" %>
     </div>
 
   <% end %>
