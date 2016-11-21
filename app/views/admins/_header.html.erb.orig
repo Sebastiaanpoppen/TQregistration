@@ -1,0 +1,17 @@
+<div class="col-sm-1 col-md-1">
+</div>
+
+<div class=" col-sm-11 col-md-11 white-bg">
+  <div class="row-buttons admin-buttons">
+    <div class="image-logo-small logo-blue-bg logo-left">
+      <%= svg 'tq-diamond.svg' %>
+    </div>
+<<<<<<< HEAD
+    <%= show_admins %>
+    <%= create_admin %>
+=======
+    <%= super_admin %>
+>>>>>>> master
+    <%= link_to "NEW BOOKING", "#", class: "btn btn-create", id: "new-booking" %>
+    <%= link_to "LOG OUT", destroy_admin_session_path, method: :delete, class: "btn btn-create" %>
+  </div>

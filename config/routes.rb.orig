@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
   get 'pages/home'
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
   get 'pages/search_users'
   get '/search_users' => "pages#search_users"
 
@@ -12,8 +15,16 @@ Rails.application.routes.draw do
 
   devise_for :admins, :controllers => { :registrations => 'admins'}
 
-
+<<<<<<< HEAD
   resources :admins do
+    resources :bookings
+    resources :users, only: [:index]
+    get 'manage_admins' 
+  end
+
+=======
+
+  resources :admins, only: [:index] do
     resources :bookings
     resources :users, only: [:index]
     get 'destroy_365days' => 'bookings#destroy_365days'
@@ -22,6 +33,11 @@ Rails.application.routes.draw do
       end
   end
 
+  devise_for :admins, :controllers => { :registrations => 'admins'}
+
+
+
+>>>>>>> master
   get 'admin', :to => redirect('/admins/sign_in')
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

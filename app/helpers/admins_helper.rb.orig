@@ -6,15 +6,15 @@ module AdminsHelper
     end
   end
 
-  def super_admin
-    if @admin.super_admin
-      link_to "SUPER ADMIN", admin_superadmin_path, class: "btn btn-create"
-    end
-  end
-
+<<<<<<< HEAD
   def show_admins
     if @admin.super_admin
       link_to "SHOW ADMINS", admin_manage_admins_path(@admin.id), class: "btn btn-create"
+=======
+  def super_admin
+    if @admin.super_admin
+      link_to "SUPER ADMIN", admin_superadmin_path, class: "btn btn-create"
+>>>>>>> master
     end
   end
 end

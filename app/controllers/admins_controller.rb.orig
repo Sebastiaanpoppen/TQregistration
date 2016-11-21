@@ -3,13 +3,14 @@ class AdminsController < Devise::RegistrationsController
   before_filter :authorize_admin, only: [:create, :destroy, :manage_admins]
   skip_before_action :require_no_authentication, only: :new
 
+<<<<<<< HEAD
   def manage_admins
     @admin = Admin.find(params[:id])
     @admins = Admin.all
-  end
-
+=======
 
   def super_admin
+>>>>>>> master
   end
 
   def create

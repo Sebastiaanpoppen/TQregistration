@@ -1,5 +1,7 @@
 
 class BookingsController < ApplicationController
+  load_and_authorize_resource
+
   before_action :authenticate_admin!, only: [:index, :edit, :destroy, :update]
   before_action :set_admin, only: [:index, :edit, :destroy, :update]
   before_action :set_booking, only: [:update]
@@ -8,7 +10,7 @@ class BookingsController < ApplicationController
 
   def index
     if @admin
-      @bookings = Booking.all.order_by_checkin(:desc).from_today
+      @bookings = Booking.all.order_by_checkin(:desc)
       respond_to do |format|
         format.html
         format.csv { send_data @bookings.to_csv }
@@ -21,14 +23,16 @@ class BookingsController < ApplicationController
 
   def create
     user_data = user_params
+    booking_data = booking_params
+    booking_data[:checkin] = booking_data[:checkin].to_date
     @admin = Admin.find(params[:admin_id])
     if user = User.where('email = ?', user_data[:email]).first
-      @booking = user.bookings.build(booking_params.merge!({admin_id: @admin.id}))
+      @booking = user.bookings.build(booking_data.merge!({admin_id: @admin.id}))
       save_booking @booking
     else
       user = User.create(user_data)
       if !user.id.blank?
-        @booking = user.bookings.build(booking_params.merge!({admin_id: @admin.id}))
+        @booking = user.bookings.build(booking_data.merge!({admin_id: @admin.id}))
         save_booking  @booking
       else
         redirect_to admin_bookings_path
@@ -72,7 +76,7 @@ class BookingsController < ApplicationController
     if booking.save
       redirect_to admin_bookings_path(@admin.id), notice: "Visit correctly created"
     else
-      redirect_to admin_bookings_path, alert: "Something whent wrog with the creation of the new visit"
+      redirect_to admin_bookings_path, alert: "Something went wrong with the creation of the new visit"
     end
   end
 
