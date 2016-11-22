@@ -367,7 +367,8 @@ input[type="checkbox"] + label:before {
 
 .glyphicon-search, .glyphicon-search:focus {
   color: #0000EE;
-  padding-top: 1px /* prevents it of being cropped */
+  padding-top: 1px; /* prevents it of being cropped */
+  padding-right: 20px  /* so the text wont be glued to it */
 
 }
 
