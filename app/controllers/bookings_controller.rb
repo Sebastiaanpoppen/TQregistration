@@ -45,7 +45,6 @@ class BookingsController < ApplicationController
   def update
     checked = params[:checked]
     if @booking.update({confirmed: checked})
-      send_email
       respond_to do |format|
         format.html {redirect_to admin_bookings_path, notice: "Booking for #{@booking.user.full_name} confirmed"}
         format.json  {render json: @booking, status: :ok, location: admin_bookings_path}
@@ -97,14 +96,4 @@ class BookingsController < ApplicationController
   def set_booking
     @booking = Booking.find(params[:id])
   end
-
-  def send_email
-    if !@admin.email.blank? && @booking.confirmed
-      email = Mailer.new(@admin.email, "Guest Arrived")
-      email.send_email "#{@booking.user.full_name} just checked in at the reception."
-    end
-  end
-  # def set_company user
-  #   params[:user].company.empty? ? params[:user].company = @admin.user.company : params[:user].company.capitalize
-  # end
 end

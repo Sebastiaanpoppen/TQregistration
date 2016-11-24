@@ -6,6 +6,8 @@ class Booking < ApplicationRecord
   validate :in_the_past?, on: [:create]
   validates :checkin, presence: true
 
+  before_save :notify_via_email
+
   private
 
   def self.order_by_checkin type
@@ -34,5 +36,10 @@ class Booking < ApplicationRecord
       errors.add(:checkin, "Invalid dates")
       return false
     end
+  end
+
+  def notify_via_email
+    return unless confirmed_changed? && confirmed?
+    BookingMailer.guest_arrived(self).deliver_now
   end
 end
