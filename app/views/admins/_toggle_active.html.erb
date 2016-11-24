@@ -12,8 +12,7 @@
       <tr>
         <td><%= admin.email %> </td>
         <td><%= check_box_tag :active, admin.id, admin.active, class: "active-check" %></td>
-
-  </td>
+        <td><%= check_box_tag :full_access, admin.id, admin.full_access, class: "full-access-check" %></td>
       </tr>
         <% end %>
     </tbody>
