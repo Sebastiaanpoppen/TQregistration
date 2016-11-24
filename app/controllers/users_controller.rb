@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if !@user.id.blank?
-      booking = @user.bookings.build({checkin: Date.today})
+      booking = @user.bookings.build({checkin: Date.today, admin_id: current_admin.id})
       save_booking booking
     else
       if @user.errors[:email].blank?
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
         if @user.bookings.where("checkin = ?", Date.today)
           redirect_to user_pages_checkedin_path(@user)
         else
-          booking = @user.bookings.build({checkin: Date.today})
+          booking = @user.bookings.build({checkin: Date.today, admin_id: current_admin.id})
           save_booking booking
         end
       end

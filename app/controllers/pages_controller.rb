@@ -28,10 +28,8 @@ class PagesController < ApplicationController
 
     if !(booking = @user.bookings.where("checkin = ?", Date.today).first).blank?
       booking.update({confirmed: true})
-      send_email booking
     else
       booking = @user.bookings.create({checkin: Date.today, confirmed: true})
-      send_email booking
     end
   end
 
@@ -40,11 +38,5 @@ class PagesController < ApplicationController
   def set_user
     @user = User.find(params[:user_id])
   end
-
-  def send_email booking
-    if !booking.admin.blank? && booking.confirmed
-      email = Mailer.new(booking.admin.email, "Guest Arrived")
-      email.send_email "#{booking.user.full_name} just checked in at the reception."
-    end
-  end
+  
 end

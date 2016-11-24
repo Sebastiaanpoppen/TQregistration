@@ -1,15 +1,14 @@
-<p>Hi!</p>
+<table class="mail-body">
+  <tr> <td><p>Hi There!</p></td></tr>
 
-<p>Heads up!</p>
+  <tr> <td><h2>Heads up!</h2></td></tr>
 
-<p><%= @booking.user.full_name %> just checked in at the reception.</p>
+  <tr> <td><p><%= @booking.user.full_name %> just checked in at the reception.</p></td></tr>
 
-<p>
-  <%= link_to 'Check your bookings', admin_bookings_url(@booking.admin), class: "button" %>
-</p>
-
-<p>
-  Cheers,
-  <br />
-  TQ Team
-</p>
+  <tr> <td><p>
+    <%= link_to 'Check your bookings', admin_bookings_url(@booking.admin), class: "button" %>
+  </p></td></tr>
+  <tr> <td><img src="http://res.cloudinary.com/dgmqizxd0/image/upload/v1479996039/coffeeman_xceswb.png" class="img-right"/></td> </tr>
+  <tr> <td><p>Cheers,</p></td> </tr>
+  <tr> <td><p>TQ Team</p></td></tr>
+</table>
