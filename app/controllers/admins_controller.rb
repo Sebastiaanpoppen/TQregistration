@@ -6,8 +6,8 @@ class AdminsController < Devise::RegistrationsController
     redirect_to admin_bookings_path, :alert => exception.message
   end
 
-  # before_action :authorize_admin, only: [:create, :destroy, :manage_admins]
-  # skip_before_action :require_no_authentication, only: :new
+  before_action :authorize_admin, only: [:create, :destroy, :manage_admins]
+  skip_before_action :require_no_authentication, only: :new
 
   def manage_admins
     @admin = Admin.find(params[:id])
