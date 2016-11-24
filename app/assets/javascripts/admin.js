@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(document).ready(function() {
   $(".active-check").bind('change',function() {
     $.ajax({
       type: 'PATCH',
@@ -13,7 +13,7 @@ $(document).ready(() => {
     .done(function(data) {
       console.log(data);
     })
-    .fail(console.log)
+    .fail(console.log);
   });
 
   $(".full-access-check").bind('change',function() {
@@ -30,6 +30,6 @@ $(document).ready(() => {
     .done(function(data) {
       console.log(data);
     })
-    .fail(console.log)
+    .fail(console.log);
   });
 });
