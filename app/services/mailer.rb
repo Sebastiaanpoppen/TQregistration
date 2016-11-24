@@ -8,7 +8,8 @@ class Mailer
     @@subject = subject
     smtp = {
       :address => ENV['SMTP_ADDRESS'] || 'smtp.gmail.com',
-      :port => 587, :domain => ENV['SMTP_DOMAIN'] || 'gmail.com',
+      :port => 587,
+      :domain => ENV['SMTP_DOMAIN'] || 'gmail.com',
       :user_name => ENV["SMTP_USERNAME"],
       :password => ENV["SMTP_PASSWORD"],
       :enable_starttls_auto => true,
