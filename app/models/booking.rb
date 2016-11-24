@@ -6,7 +6,7 @@ class Booking < ApplicationRecord
   validate :in_the_past?, on: [:create]
   validates :checkin, presence: true
 
-  after_save :notify_via_email
+  before_save :notify_via_email
 
   private
 
