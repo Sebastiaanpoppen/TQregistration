@@ -9,7 +9,7 @@ Booking.delete_all
 User.delete_all
 Admin.delete_all
 # creating email for Admins
-emailSA = "robert@tq.co"
+emailSA = "robertgaal@gmail.com"
 emailA1 = "info@codaisseur.com"
 emailA2 = "team@tq.co"
 emailA3 = "giulio_wow@hotmail.it"

@@ -3,14 +3,14 @@ require 'mail'
 class Mailer
 
   def initialize to, subject
-    @@from = ENV["EMAIL_USERNAME"]
+    @@from = ENV["EMAIL_FROM"]
     @@to = to
     @@subject = subject
     smtp = {
-      :address => 'smtp.gmail.com',
-      :port => 587, :domain => 'gmail.com',
-      :user_name => ENV["EMAIL_USERNAME"],
-      :password => ENV["EMAIL_PASSWORD"],
+      :address => ENV['SMTP_ADDRESS'] || 'smtp.gmail.com',
+      :port => 587, :domain => ENV['SMTP_DOMAIN'] || 'gmail.com',
+      :user_name => ENV["SMTP_USERNAME"],
+      :password => ENV["SMTP_PASSWORD"],
       :enable_starttls_auto => true,
       :openssl_verify_mode => 'none'
     }
