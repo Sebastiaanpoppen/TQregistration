@@ -53,10 +53,10 @@ class AdminsController < Devise::RegistrationsController
 
   # This should probably be abstracted to ApplicationController
   # as shown by diego.greyrobot
-  # def authorize_admin
-  #   return unless !current_admin.super_admin?
-  #   redirect_to admin_bookings_path, alert: 'Admins only!'
-  # end
+  def authorize_admin
+    return unless !current_admin.super_admin?
+    redirect_to admin_bookings_path, alert: 'Admins only!'
+  end
 
   def admin_params
     params.require(:admin).permit(:email, :password, :active, :full_access)
