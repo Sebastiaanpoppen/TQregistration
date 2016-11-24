@@ -5,14 +5,13 @@ class AdminsController < Devise::RegistrationsController
     redirect_to admin_bookings_path, :alert => exception.message
   end
 
-  before_filter :authorize_admin, only: [:create, :destroy, :manage_admins]
+  before_filter :authorize_admin, only: [:create, :destroy, :manage_admins, :toggle]
   skip_before_action :require_no_authentication, only: :new
 
   def manage_admins
     @admin = Admin.find(params[:id])
     @admins = Admin.all
   end
-
 
   def super_admin
     @admins = Admin.all
@@ -26,11 +25,16 @@ class AdminsController < Devise::RegistrationsController
     end
   end
 
+
   def update
-    checked = params[:checked]
-    if @admin.update({active: false})
+    @admin = Admin.find(params[:id])
+    @admin.update_attributes(admin_params)
+    respond_to do |format|
+    format.html { redirect_to admin_superadmin_path(@admin) }
+    format.js
     end
   end
+
 
   def sign_up(resource_name, resource)
     true
@@ -45,7 +49,7 @@ class AdminsController < Devise::RegistrationsController
   end
 
   def admin_params
-    params.require(:admin).permit(:email, :password)
+    params.require(:admin).permit(:email, :password, :active, :full_access)
   end
 
 end

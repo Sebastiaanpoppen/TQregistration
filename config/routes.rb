@@ -20,9 +20,10 @@ Rails.application.routes.draw do
       devise_scope :admin do
         get '/superadmin', to: "admins#super_admin"
         delete '/destroy', to: "admins#destroy"
-
+        post '/superadmin/toggle_active/:admin_id', to: "admins#toggle_active"
       end
-  end
+      end
+
 
   get 'admin', :to => redirect('/admins/sign_in')
 
