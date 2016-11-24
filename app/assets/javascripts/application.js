@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require_tree .
 //= require bookings
+//= require Chart.bundle
+//= require chartkick
 //= require admin
