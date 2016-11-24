@@ -6,7 +6,7 @@ class Booking < ApplicationRecord
   validate :in_the_past?, on: [:create]
   validates :checkin, presence: true
 
-  after_save :notify_via_email
+  before_save :notify_via_email
 
   private
 
@@ -40,6 +40,6 @@ class Booking < ApplicationRecord
 
   def notify_via_email
     return unless confirmed_changed? && confirmed?
-    BookingMailer.guest_arrived(self).deliver_now
+    BookingMailer.guest_arrived(self).deliver_later
   end
 end
