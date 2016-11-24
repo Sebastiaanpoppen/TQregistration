@@ -1,0 +1,19 @@
+<table class="table table-bordered table-striped">
+  <thead>
+      <tr>
+          <th class="text-left"><%= "Email:" %></th>
+          <th class="text-left"><%= "Active" %></th>
+          <th class="text-left"><%= "full access" %></th>
+
+        </tr>
+    </thead>
+    <tbody>
+      <% @admins.each do |admin| %>
+      <tr>
+        <td><%= admin.email %> </td>
+        <td><%= check_box_tag :active, admin.id, admin.active, class: "active-check" %></td>
+        <td><%= check_box_tag :full_access, admin.id, admin.full_access, class: "full-access-check" %></td>
+      </tr>
+        <% end %>
+    </tbody>
+</table>
