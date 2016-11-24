@@ -12,7 +12,6 @@ Rails.application.routes.draw do
 
   devise_for :admins, :controllers => { :registrations => 'admins'}
 
-
   resources :admins do
     resources :bookings
     resources :users, only: [:index]
@@ -20,8 +19,14 @@ Rails.application.routes.draw do
       devise_scope :admin do
         get '/superadmin', to: "admins#super_admin"
         delete '/destroy', to: "admins#destroy"
-
       end
+  end
+
+  devise_scope :admin do
+    patch '/admins/toggle_active/:id', to: "admins#toggle_active"
+    put '/admins/toggle_active/:id', to: "admins#toggle_active"
+    patch '/admins/toggle_full_access/:id', to: "admins#toggle_full_access"
+    put '/admins/toggle_full_access/:id', to: "admins#toggle_full_access"
   end
 
   get 'admin', :to => redirect('/admins/sign_in')

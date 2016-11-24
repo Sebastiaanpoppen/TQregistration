@@ -1,22 +1,2 @@
 <%= render 'admins/super_admin_header' %>
-
-<table class="table table-bordered table-striped">
-  <thead>
-      <tr>
-          <th class="text-left"><%= "Email:" %></th>
-          <th class="text-left"><%= "Active" %></th>
-          <th class="text-left"><%= "full access" %></th>
-
-        </tr>
-    </thead>
-    <tbody>
-      <% @admins.each do |admin| %>
-      <tr>
-        <td><%= admin.email %> </td>
-        <td><%= check_box_tag :active, admin, admin.active, id: admin.id ,  class: "confirmed"  %></td>
-        <td></td>
-  </td>
-      </tr>
-        <% end %>
-    </tbody>
-</table>
+<%= render 'admins/toggle_active' %>
