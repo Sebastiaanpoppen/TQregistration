@@ -1,7 +1,7 @@
 module BookingsHelper
 
   def past? checkin
-    checkin.to_date < Date.today ? "label-danger" : "label-success"
+    checkin < Date.today ? "label-danger" : "label-success"
   end
 
   def admin booking

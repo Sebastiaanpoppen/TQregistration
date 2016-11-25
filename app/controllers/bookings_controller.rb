@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
   def index
     if @admin
       (!@admin.full_access.blank? && @admin.full_access) || @admin.super_admin ?
-        @bookings = Booking.all.order_by_checkin(:desc) : @bookings = @admin.bookings.order_by_checkin(:desc)
+        @bookings = Booking.from_today.order_by_checkin(:desc) : @bookings = @admin.bookings.from_today.order_by_checkin(:desc)
 
       respond_to do |format|
         format.html
