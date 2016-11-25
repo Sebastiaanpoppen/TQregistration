@@ -4,7 +4,7 @@
             <td><p class="text-form"><%= i + 1 %></p></td>
             <td><p class="text-form"><%= booking.user.full_name %><br/>
                 (Guest)</p></p></td>
-            <td><p><span class="label <%= past? booking.checkin  %>"> <%= booking.checkin.to_date %></span></p></td>
+            <td><p><span class="label <%= past? booking.checkin  %>"> <%= booking.checkin.strftime("%d/%m/%Y") %></span></p></td>
             <td><p class="text-form"><%= user_company booking.user %></p></td>
             <td><p class="text-form"><%= user_email booking.user %></p></td>
             <td class="col-md-2">
