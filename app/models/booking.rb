@@ -39,7 +39,7 @@ class Booking < ApplicationRecord
   end
 
   def notify_via_email
-    return unless confirmed_changed? && confirmed?
-    BookingMailer.guest_arrived(self).deliver_later
+    return unless valid? && confirmed_changed? && confirmed?
+    BookingMailer.guest_arrived(self).deliver_now
   end
 end
