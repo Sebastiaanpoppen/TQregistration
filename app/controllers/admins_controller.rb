@@ -3,7 +3,7 @@ class AdminsController < Devise::RegistrationsController
   protect_from_forgery with: :null_session, only: [:toggle_active, :toggle_full_access]
 
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to admin_bookings_path, :alert => exception.message
+    redirect_to root_path, :alert => exception.message
   end
 
   before_action :authorize_admin, only: [:create, :destroy, :manage_admins]
@@ -20,9 +20,9 @@ class AdminsController < Devise::RegistrationsController
 
   def create
     if Admin.create(admin_params)
-      redirect_to "/admin", notice: "New admin succesfully created"
+      redirect_to admin_superadmin_path(current_admin), notice: "New admin succesfully created"
     else
-      redirect_to "/admin" , alert: "There was an error creating the new admin"
+      redirect_to admin_superadmin_path(current_admin), alert: "There was an error creating the new admin"
     end
   end
 
@@ -44,9 +44,8 @@ class AdminsController < Devise::RegistrationsController
     end
   end
 
-
   def sign_up(resource_name, resource)
-    true
+    current_admin.super_admin?
   end
 
   private

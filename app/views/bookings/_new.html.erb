@@ -8,7 +8,7 @@
         <div class="box">
           <h2 class="page-title page-title-blue page-title-smaller">New Booking</h2>
 
-          <%= form_for :booking, url: admin_bookings_path, html: {id: "new-booking-form", autocomplete: "off"} do |f| %>
+          <%= form_for @booking, url: admin_bookings_path, html: {id: "new-booking-form", autocomplete: "off"} do |f| %>
           <div class="box-content">
             <div class="form-no-margin">
               <%= form_for :user do |u| %>

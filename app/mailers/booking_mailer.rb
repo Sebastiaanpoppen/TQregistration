@@ -7,6 +7,7 @@ class BookingMailer < ApplicationMailer
   #
   def guest_arrived(booking)
     @booking = booking
+    return if booking.admin.blank?
     mail to: booking.admin.email, subject: "Your guest arrived at TQ"
   end
 end

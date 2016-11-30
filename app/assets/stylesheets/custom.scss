@@ -181,18 +181,16 @@ body, html {
 .notice, .alert{
   position: absolute;
   z-index: 1000;
-  font-size: 16px;
-  width: auto;
-  max-width: 300px;
-  margin-left: 30%;
+  font-size: 18px;
   margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 
-  h3{
+  h3 {
     margin: 0;
+    font-size: 18px;
   }
 }
 

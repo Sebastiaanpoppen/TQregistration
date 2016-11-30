@@ -10,8 +10,9 @@ class BookingsController < ApplicationController
 
   def index
     if @admin
-      (!@admin.full_access.blank? && @admin.full_access) || @admin.super_admin ?
-        @bookings = Booking.from_today.order_by_checkin(:desc) : @bookings = @admin.bookings.from_today.order_by_checkin(:desc)
+      set_bookings
+
+      @booking = Booking.new
 
       respond_to do |format|
         format.html
@@ -28,18 +29,11 @@ class BookingsController < ApplicationController
     booking_data = booking_params
     booking_data[:checkin] = booking_data[:checkin].to_date
     @admin = Admin.find(params[:admin_id])
-    if user = User.where('email = ?', user_data[:email]).first
-      @booking = user.bookings.build(booking_data.merge!({admin_id: @admin.id}))
-      save_booking @booking
-    else
-      user = User.create(user_data)
-      if !user.id.blank?
-        @booking = user.bookings.build(booking_data.merge!({admin_id: @admin.id}))
-        save_booking  @booking
-      else
-        redirect_to admin_bookings_path
-      end
-    end
+    user = User.where('email = ?', user_data[:email]).first || User.create(user_data)
+    @booking = Booking.new(booking_data)
+    @booking.admin = @admin
+    @booking.user = user
+    save_booking!
   end
 
   def update
@@ -73,11 +67,13 @@ class BookingsController < ApplicationController
 
   private
 
-  def save_booking booking
-    if booking.save
-      redirect_to admin_bookings_path(@admin.id), notice: "Visit correctly created"
+  def save_booking!
+    if @booking.save
+      redirect_to admin_bookings_path(@admin.id), notice: "Booking correctly registered"
     else
-      redirect_to admin_bookings_path, alert: "Something went wrong with the creation of the new visit"
+      redirect_to admin_bookings_path(@admin.id),
+        alert: (@booking.errors[:checkin] && @booking.errors[:checkin].first) ||
+          "There was a problem creating this booking"
     end
   end
 
@@ -95,5 +91,11 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
+  end
+
+  def set_bookings
+    @admin.full_access || @admin.super_admin ?
+      @bookings = Booking.includes(:user, :admin).from_today.order_by_checkin(:desc) :
+      @bookings = @admin.bookings.includes(:user, :admin).from_today.order_by_checkin(:desc)
   end
 end

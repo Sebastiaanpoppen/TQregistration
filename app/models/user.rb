@@ -16,6 +16,12 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  def masked_email
+    parts = email.split('@')
+    username = parts.shift
+    (["#{username[0]}#{'•' * (username.length - 2)}#{username[-1]}"] + parts).join('@')
+  end
+
   def self.search(search)
     where('first_name ILIKE :search OR last_name ILIKE :search OR email ILIKE :search', search: "%#{search}%")
   end
