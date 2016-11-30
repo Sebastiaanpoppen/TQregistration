@@ -95,7 +95,7 @@ class BookingsController < ApplicationController
 
   def set_bookings
     @admin.full_access || @admin.super_admin ?
-      @bookings = Booking.includes(:user, :admin).from_today.order_by_checkin(:desc) :
-      @bookings = @admin.bookings.includes(:user, :admin).from_today.order_by_checkin(:desc)
+      @bookings = Booking.includes(:user, :admin).order_by_checkin(:desc) :
+      @bookings = @admin.bookings.includes(:user, :admin).order_by_checkin(:desc)
   end
 end
