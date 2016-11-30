@@ -2,7 +2,7 @@
 
         <tr>
             <td><p class="text-form"><%= i + 1 %></p></td>
-            <td><p class="text-form"><%= booking.created_at %></p></td>
+            <td><p class="text-form"><%= booking.created_at.strftime("%Y-%m-%d") %></p></td>
             <td><p class="text-form"><%= booking.user.full_name %><br/>
                 (Guest)</p></p></td>
             <td><p><span class="label <%= future? booking.checkin  %> <%= past? booking.checkin  %>"> <%= booking.checkin.strftime("%d/%m/%Y") %></span></p></td>
