@@ -4,6 +4,10 @@ module BookingsHelper
     checkin < Date.today ? "label-danger" : "label-success"
   end
 
+  def future? checkin
+    checkin > Date.today ? "label-future" : "label-success"
+  end
+
   def admin booking
     booking.admin.blank? ? nil : booking.admin.id
   end
