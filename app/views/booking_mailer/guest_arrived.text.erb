@@ -1,9 +1,12 @@
-<p>Hi!</p>
+<%= @booking.user.full_name %> just checked in at the reception.
 
-<p><%= @booking.user.full_name %> just checked in at the reception.</p>
+Hi There!
 
-<p>
-  Cheers,
-  <br />
-  TQ Team
-</p>
+Heads up!
+
+<%= @booking.user.full_name %> just checked in at the reception.
+
+<%= link_to 'Check your bookings', admin_bookings_url(@booking.admin), class: "button" %>
+
+Cheers,
+TQ Team

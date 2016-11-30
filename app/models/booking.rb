@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :admin
-  before_create :set_date
+  before_validation :set_date
   validate :already_exist?, on: [:create]
   validate :in_the_past?, on: [:create]
   validates :checkin, presence: true
@@ -23,19 +23,13 @@ class Booking < ApplicationRecord
   end
 
   def already_exist?
-    if Booking.where("user_id = ? AND checkin = ?",user_id, checkin.to_date).first
-      errors.add(:checkin, "Date Not Available")
-      return false
-    else
-      return true
-    end
+    return if Booking.where("user_id = ? AND checkin = ?", user_id, checkin.to_date).count == 0
+    errors.add(:checkin, "This guest is already registered for that date")
   end
 
   def in_the_past?
-    if checkin < Date.today
-      errors.add(:checkin, "Invalid dates")
-      return false
-    end
+    return if checkin >= Date.today
+    errors.add(:checkin, "Can't register guests in the past, sorry :)")
   end
 
   def notify_via_email
