@@ -37,7 +37,7 @@ gem 'active_median', '~> 0.1.0'
 gem 'carrierwave'
 gem 'cloudinary'
 
-
+gem 'appsignal'
 
 
 # Use Capistrano for deployment

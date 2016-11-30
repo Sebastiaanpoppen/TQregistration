@@ -42,6 +42,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
+    appsignal (2.0.3)
+      rack
+      thread_safe
     arel (7.1.4)
     autoprefixer-rails (6.5.3)
       execjs
@@ -257,6 +260,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_median (~> 0.1.0)
+  appsignal
   bootstrap-sass (~> 3.3.6)
   byebug
   cancancan
