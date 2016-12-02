@@ -8,7 +8,12 @@ $(document).ready(function() {
     });
     $('#create-new-booking').click(checkValues);
 
-    $('#bookings').DataTable();
+    try {
+      $('#bookings').DataTable()
+    }
+    catch(error) {
+      console.error(error);
+    };
 
     $('.confirmed').change(confirm_booking);
 

@@ -10,7 +10,11 @@ class Booking < ApplicationRecord
 
   private
 
-  def self.order_by_checkin type
+  def self.confirmed
+    where(confirmed: true)
+  end
+
+  def self.order_by_checkin(type)
     type.blank? ? order(checkin: :desc) : order(checkin: type)
   end
 
