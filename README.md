@@ -61,6 +61,9 @@ The last but not least feature that we want to talk about is the automatic confi
 * [Group Date](https://rubygems.org/gems/groupdate) - Simple way to group by: day, month, year
 * [Faker](https://rubygems.org/gems/faker) - Generate fake data for development purposes
 
+## DEMO
+Check the demo [here](https://tqreg.herokuapp.com/). Please note that the design is adjusted for iPad only. 
+
 ## COLLABORATORS
 
 * [Sebastiaan Poppen](https://github.com/Sebastiaanpoppen)
