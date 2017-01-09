@@ -17,6 +17,7 @@ class User < ApplicationRecord
   end
 
   def masked_email
+    return '*********' if email.blank?
     parts = email.split('@')
     username = parts.shift
     (["#{username[0]}#{'•' * (username.length - 2)}#{username[-1]}"] + parts).join('@')
