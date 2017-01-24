@@ -12,6 +12,7 @@
         <Cell><Data ss:Type="String">Checkin Date</Data></Cell>
         <Cell><Data ss:Type="String">Company</Data></Cell>
         <Cell><Data ss:Type="String">Email</Data></Cell>
+        <Cell><Data ss:Type="String">Newsletter</Data></Cell>
       </Row>
       <% @bookings.each_with_index do |booking, index| %>
           <Row>
@@ -20,6 +21,7 @@
             <Cell><Data ss:Type="String"><%= booking.checkin %></Data></Cell>
             <Cell><Data ss:Type="String"><%= booking.user.company %></Data></Cell>
             <Cell><Data ss:Type="String"><%= booking.user.email %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= booking.user.newsletter ? 'Yes' : 'No' %></Data></Cell>
           </Row>
       <% end %>
     </Table>
