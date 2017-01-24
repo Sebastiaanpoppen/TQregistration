@@ -1,0 +1,4 @@
+~ID~;~Name~;~Checkin Date~;~Company~;~Email~;~Newsletter~;
+<% @bookings.each_with_index do |booking, index| %>
+~<%= index + 1 %>~;~<%= booking.user.full_name %>~;~<%= booking.checkin %>~;~<%= booking.user.company %>~;~<%= booking.user.email %>~;~<%= booking.user.newsletter ? 'Yes' : 'No' %>~;
+<% end %>
